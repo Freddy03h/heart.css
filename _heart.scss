@@ -1,0 +1,139 @@
+body.page-layout{overflow: hidden;}
+.page-layout{
+	position: absolute;
+	//width:100%;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
+	&.with-topbar{
+		top: $height-topbar;
+	}
+	&.with-bottombar{
+		bottom: $height-bottombar;
+	}
+}
+.top-bar{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: $height-topbar;
+}
+.tab-bar{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: $height-bottombar;
+}
+
+//FALLBACK OLD BROWSER (like Android 2.X)
+.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
+	&, body{height:100%;}
+	.page-layout{
+		position: relative;
+		bottom:auto;
+		padding-top: 0;
+		padding-bottom: 0;
+		overflow-y:visible;
+	}
+	.split-view{
+		min-height: 100%;
+		@include display-flex;
+		>.page-layout{
+			@include display-flex;
+			@include flex-direction(column);
+			>.page-layout{
+				@include flex(1);
+			}
+		}
+	}
+	.split-view>.aside-view{
+		position:relative;
+		min-height: 100%;
+	}
+	.split-view>.content-view{
+		left:auto;
+		@include flex(1);
+	}
+	.top-bar{
+		position: static;
+	}
+	.page-layout.with-topbar{
+		top:auto;
+	}
+}
+
+
+//////////////////Scrollable
+
+.pull-to-refresh {
+    display: none;
+}
+
+@-webkit-keyframes rotationPullToRefresh {
+    from { -webkit-transform: rotate(-180deg); }
+    to { -webkit-transform: rotate(180deg); }
+}
+
+.cssanimations.csstransforms3d.positionfixed  {
+	.scrollable {
+		@extend .page-layout;
+        -webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
+        .wrap{
+            overflow: auto;
+            min-height: 100%;
+        }
+
+    }
+    
+    &.overflowscrolling.appleios{
+        .scrollable .wrap {
+            padding-bottom: 1px;
+        }
+        .pull-to-refresh {
+            @include display-flex;
+            @include align-items(center);
+            //display: block;
+            height: 60px;
+            width: 100%; 
+            
+            position: absolute; 
+            left: 0; 
+            top: -60px;
+            overflow: auto;
+
+            z-index: -1;
+            .icon{
+                margin-left:20px;
+                font-size: 40px;
+                &:before{
+                   content:"⇣"; 
+                }
+                
+            }
+            .title-pull, .title-release{
+                font-size: 16px;
+            }
+            .title-release{
+                display:none;
+            }
+            &.loading{
+                position:static;
+                .icon{
+                    &:before{
+                        content:"↻";
+                    }
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-animation: rotationPullToRefresh 1s  linear infinite;
+                }
+            }
+        }
+    }
+}
