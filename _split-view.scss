@@ -1,0 +1,123 @@
+$largeurMenu :320px - $height-topbar;
+.split-view{
+	@extend .page-layout;
+	>.aside-view{
+		@extend .page-layout;
+		width: $largeurMenu;
+		z-index:1;
+	}
+	>.content-view{
+		@extend .page-layout;
+		left: $largeurMenu;
+		//width: -webkit-calc(100% - #{$largeurMenu});
+		//width: calc(100% - #{$largeurMenu});
+		z-index:2;
+	}
+	.button-split{
+		display:none;
+	}
+}
+
+//FALLBACK OLD BROWSER (like Android 2.X)
+.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
+
+	.split-view{
+		min-height: 100%;
+		@include display-flex;
+		>.aside-view, >.content-view{
+			@include display-flex;
+			@include flex-direction(column);
+			/*>.page-layout{
+				@include flex(1);
+			}*/
+		}
+	}
+	.split-view>.aside-view{
+		position:relative;
+		min-height: 100%;
+	}
+	.split-view>.content-view{
+		left:auto;
+		@include flex(1);
+	}
+}
+
+
+@media screen and (max-width: 570px) {
+	.split-view{
+		-webkit-perspective: 1000px;
+	    perspective: 1000px;
+        -webkit-transform-style: preserve-3d;
+	    transform-style: preserve-3d;
+
+		>.aside-view, >.content-view{
+			-webkit-transition-property: -webkit-transform;
+			transition-property: transform;
+			-webkit-transition-duration:300ms;
+			transition-duration:300ms;
+			-webkit-transition-timing-function: ease-in-out;
+			transition-timing-function: ease-in-out;
+
+			-webkit-backface-visibility: hidden;
+		}
+		>.aside-view{
+			width: $largeurMenu;
+			//display: none;
+
+			-webkit-transform: translateZ(-100px) rotateY(25deg);
+			transform: translateZ(-100px) rotateY(25deg);
+		}
+		>.content-view{
+			left:0;
+			width: 100%;
+		}
+		&.open-menu{
+			>.aside-view{
+				//display: block;
+				-webkit-transform: translateZ(0) rotateY(0deg);
+				transform: translateZ(0) rotateY(0deg);
+			}
+			>.content-view{
+				-webkit-transform: translateX($largeurMenu);
+				transform: translateX($largeurMenu);
+			}
+		}
+
+		.button-split{
+			//@include display-flex;
+			display:block;
+		}
+	}
+
+
+	.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
+		.split-view{
+			>.aside-view{
+				position:absolute;
+				display: none;
+			}
+			>.content-view{
+				//position:static;
+				//@include flex(0);
+				//left:;
+			}
+			&.open-menu{
+				display:block;
+				>.aside-view{
+					position:static;
+					display: block;
+				}
+				>.content-view{
+					position:absolute;
+					left:$largeurMenu;
+					-webkit-transform: none;
+					transform: none;
+					bottom:0;
+					overflow-y: hidden;
+				}
+			}
+		}
+		
+	}
+
+}

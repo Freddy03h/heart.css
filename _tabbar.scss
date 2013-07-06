@@ -1,0 +1,17 @@
+.tabbar{
+	@extend .bottombar;
+	@include display-flex;
+	@include justify-content(center);
+	>*{
+		@include flex(1);
+
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		>*{
+			display: block;
+			//@include flex(1);
+		}
+	}
+	
+}

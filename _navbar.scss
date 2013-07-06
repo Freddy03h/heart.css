@@ -1,0 +1,33 @@
+.navbar{
+	@extend .topbar;
+	//@include display-flex;
+	//@include align-items(center);
+	//@include flex-direction(row);
+	.pull-left, .pull-right{
+		position:absolute;
+		top:0;
+	}
+	.pull-left{
+		left:0;
+		z-index: 2;
+	}
+	.pull-right{
+		right:0;
+		z-index: 3;
+	}
+	.title{
+		z-index: 1;
+		position:absolute;
+		opacity:0;
+		-webkit-transform: translate3d(0, $height-topbar, 0);
+		transform: translate3d(0, $height-topbar, 0);
+		padding:0 $height-topbar+10;
+		box-sizing:border-box;
+
+		@include transition(all 0.3s ease-in-out);
+		&.current{
+			opacity:1;
+			@include transform(none);
+		}
+	}
+}

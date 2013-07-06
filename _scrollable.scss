@@ -1,0 +1,61 @@
+
+.pull-to-refresh {
+    display: none;
+}
+
+@-webkit-keyframes rotationPullToRefresh {
+    from { -webkit-transform: rotate(-180deg); }
+    to { -webkit-transform: rotate(180deg); }
+}
+
+.cssanimations.csstransforms3d.positionfixed  {
+	.scrollable {
+		@extend .page-layout;
+        -webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
+        .wrap{
+            overflow: auto;
+            min-height: 100%;
+        }
+
+    }
+    
+    &.overflowscrolling.appleios{
+        .scrollable .wrap {
+            padding-bottom: 1px;
+        }
+        .pull-to-refresh {
+            //@include display-flex;
+            //@include align-items(center);
+
+            display: block;
+            height: 60px;
+            width: 100%; 
+            
+            position: absolute; 
+            left: 0; 
+            top: -60px;
+            overflow: auto;
+
+            z-index: -1;
+            .icon{
+                margin:0 auto;
+                font-size: 40px;
+                &:before{
+                   content:"⇣"; 
+                }
+            }
+            &.loading{
+                position:static;
+                .icon{
+                    &:before{
+                        content:"↻";
+                    }
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-animation: rotationPullToRefresh 1s linear infinite;
+                }
+            }
+
+        }
+
+    }
+}
