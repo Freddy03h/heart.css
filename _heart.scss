@@ -6,6 +6,7 @@ body.page-layout{overflow: hidden;}
 	right: 0;
 	left: 0;
 	bottom: 0;
+	@include box-sizing(border-box);
 	
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -24,6 +25,7 @@ body.page-layout{overflow: hidden;}
 	right: 0;
 	left: 0;
 	height: $height-topbar;
+	@include box-sizing(border-box);
 }
 .bottombar{
 	position: absolute;
@@ -31,6 +33,7 @@ body.page-layout{overflow: hidden;}
 	right: 0;
 	left: 0;
 	height: $height-bottombar;
+	@include box-sizing(border-box);
 }
 
 //FALLBACK OLD BROWSER (like Android 2.X)

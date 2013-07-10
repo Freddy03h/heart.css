@@ -1,6 +1,7 @@
 $largeurMenu :320px - $height-topbar;
 .split-view{
 	@extend .page-layout;
+	-webkit-overflow-scrolling:auto;
 	>.aside-view{
 		@extend .page-layout;
 		width: $largeurMenu;
@@ -47,6 +48,8 @@ $largeurMenu :320px - $height-topbar;
 	.split-view{
 		-webkit-perspective: 1000px;
 	    perspective: 1000px;
+	    -webkit-perspective-origin: 50% 50%;
+        perspective-origin: 50% 50%;
         -webkit-transform-style: preserve-3d;
 	    transform-style: preserve-3d;
 
