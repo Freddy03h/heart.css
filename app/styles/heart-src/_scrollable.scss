@@ -9,8 +9,8 @@
 }
 
 .cssanimations.csstransforms3d.positionfixed  {
-	.scrollable {
-		@extend .page-layout;
+	.layer-scrollable {
+		@extend .layer;
         -webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
         .wrap{
             overflow: auto;
@@ -20,7 +20,7 @@
     }
     
     &.overflowscrolling.appleios{
-        .scrollable .wrap {
+        .layer-scrollable .wrap {
             padding-bottom: 1px;
         }
         .pull-to-refresh {

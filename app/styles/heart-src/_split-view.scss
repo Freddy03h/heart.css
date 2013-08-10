@@ -1,14 +1,14 @@
 $largeurMenu :320px - $height-topbar;
-.split-view{
-	@extend .page-layout;
+.split-layout{
+	@extend .layer;
 	-webkit-overflow-scrolling:auto;
-	>.aside-view{
-		@extend .page-layout;
+	>.aside-layer{
+		@extend .layer;
 		width: $largeurMenu;
 		z-index:1;
 	}
-	>.content-view{
-		@extend .page-layout;
+	>.content-layer{
+		@extend .layer;
 		left: $largeurMenu;
 		//width: -webkit-calc(100% - #{$largeurMenu});
 		//width: calc(100% - #{$largeurMenu});
@@ -22,22 +22,22 @@ $largeurMenu :320px - $height-topbar;
 //FALLBACK OLD BROWSER (like Android 2.X)
 .no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 
-	.split-view{
+	.split-layout{
 		min-height: 100%;
 		@include display-flex;
-		>.aside-view, >.content-view{
+		>.aside-layer, >.content-layer{
 			@include display-flex;
 			@include flex-direction(column);
-			/*>.page-layout{
+			/*>.layer{
 				@include flex(1);
 			}*/
 		}
 	}
-	.split-view>.aside-view{
+	.split-layout>.aside-layer{
 		position:relative;
 		min-height: 100%;
 	}
-	.split-view>.content-view{
+	.split-layout>.content-layer{
 		left:auto;
 		@include flex(1);
 	}
@@ -45,7 +45,7 @@ $largeurMenu :320px - $height-topbar;
 
 
 @media screen and (max-width: 570px) {
-	.split-view{
+	.split-layout{
 		-webkit-perspective: 1000px;
 	    perspective: 1000px;
 	    -webkit-perspective-origin: 50% 50%;
@@ -53,7 +53,7 @@ $largeurMenu :320px - $height-topbar;
         -webkit-transform-style: preserve-3d;
 	    transform-style: preserve-3d;
 
-		>.aside-view, >.content-view{
+		>.aside-layer, >.content-layer{
 			-webkit-transition-property: -webkit-transform;
 			transition-property: transform;
 			-webkit-transition-duration:300ms;
@@ -63,24 +63,24 @@ $largeurMenu :320px - $height-topbar;
 
 			-webkit-backface-visibility: hidden;
 		}
-		>.aside-view{
+		>.aside-layer{
 			width: $largeurMenu;
 			//display: none;
 
 			-webkit-transform: translateZ(-100px) rotateY(25deg);
 			transform: translateZ(-100px) rotateY(25deg);
 		}
-		>.content-view{
+		>.content-layer{
 			left:0;
 			width: 100%;
 		}
-		&.open-menu{
-			>.aside-view{
+		&.open{
+			>.aside-layer{
 				//display: block;
 				-webkit-transform: translateZ(0) rotateY(0deg);
 				transform: translateZ(0) rotateY(0deg);
 			}
-			>.content-view{
+			>.content-layer{
 				-webkit-transform: translateX($largeurMenu);
 				transform: translateX($largeurMenu);
 			}
@@ -94,23 +94,23 @@ $largeurMenu :320px - $height-topbar;
 
 
 	.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
-		.split-view{
-			>.aside-view{
+		.split-layout{
+			>.aside-layer{
 				position:absolute;
 				display: none;
 			}
-			>.content-view{
+			>.content-layer{
 				//position:static;
 				//@include flex(0);
 				//left:;
 			}
-			&.open-menu{
+			&.open{
 				display:block;
-				>.aside-view{
+				>.aside-layer{
 					position:static;
 					display: block;
 				}
-				>.content-view{
+				>.content-layer{
 					position:absolute;
 					left:$largeurMenu;
 					-webkit-transform: none;

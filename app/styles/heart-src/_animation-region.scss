@@ -1,10 +1,11 @@
-.animation-region > :not(.current) {
-    display: none;
+.animation-layout > :not(.current) {
+    //display: none;
+	visibility: hidden;
 }
 
 .cssanimations.csstransforms3d.positionfixed  {
 
-	.animation-region{
+	.animation-layout{
         -webkit-perspective: 1000px;
 	    perspective: 1000px;
         -webkit-perspective-origin: 50% 50%;
@@ -14,16 +15,18 @@
         
 	    overflow: hidden;
 	}
-	.animation-region > * {
+	.animation-layout > * {
 		width: 100%;
 		position: absolute;
-		display: block;
+		//display: block;
+		visibility: visible;
 
 		//-webkit-perspective: 1000;
 		-webkit-backface-visibility: hidden;
 	}
-	.animation-region > :not(.current) {
-		display: none;
+	.animation-layout > :not(.current) {
+		//display: none;
+		visibility: hidden;
 	}
 
     .in, .out {

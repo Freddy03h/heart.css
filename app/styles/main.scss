@@ -1,0 +1,51 @@
+$height-bottombar: 50px;
+$height-topbar: 44px;
+
+@import "heart-src/heart";
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+p{
+    margin: 1em;
+}
+
+.fake-viewport{
+    display:block;
+    position:relative;
+    width: 320px;
+    height: 480px;
+    background-color: #eee;
+}
+
+.layer{
+    background-color: cyan;
+}
+.topbar {
+    background-color: orange;
+}
+.bottombar {
+    background-color: red;
+}
+.layer-scrollable{
+    background-color: pink !important;
+}
+
+#page1{
+    z-index: 2;
+    background-color: green !important;
+}
+#page2{
+    z-index: 1;
+    background-color: blue !important;
+}
+
+.aside-layer{
+    background-color: olive !important;
+}
+.content-layer{
+    background-color: yellow !important;
+}

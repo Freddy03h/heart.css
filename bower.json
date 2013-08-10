@@ -1,0 +1,11 @@
+{
+  "name": "heart",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "compass-flex": "https://github.com/Freddy03h/compass-flex.git#~0.2.0"
+  },
+  "devDependencies": {
+    "jquery": "1.9.1"
+  }
+}
