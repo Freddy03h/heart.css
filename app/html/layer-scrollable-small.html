@@ -19,25 +19,14 @@
 
         <script src="/bower_components/modernizr/feature-detects/css-overflow-scrolling.js"></script>
         <script src="/bower_components/modernizr-test_position_fixed_ios/modernizr-test_position_fixed_ios.js"></script>
-
-        <script src="/bower_components/jquery/jquery.min.js"></script>
     </head>
     <body class="layer">
 
-            <div class="layer animation-layout">
-                <div id="page1" class="layer current">
-                    <h3>Page 1</h3>
-                    <button id="page1-button">Got to Page 2</button>
-                </div>
-                <div id="page2" class="layer">
-                    <h3>Page 2</h3>
-                    <button id="page2-button">Back to Page 1</button>
-                </div>
+        <div class="layer-scrollable">
+            <div class="wrap">
+                <p>Modernizr tests which native CSS3 and HTML5 features are available in the current UA and makes the results available to you in two ways: as properties on a global `Modernizr` object, and as classes on the html element. This information allows you to progressively enhance your pages with a granular level of control over the experience.</p>
             </div>
-
-            <!-- build:js scripts/main.js -->
-            <script src="/scripts/main.js"></script>
-            <!-- endbuild -->
+        </div>
 
     </body>
 </html>

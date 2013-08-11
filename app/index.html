@@ -16,16 +16,19 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        
+        <script src="bower_components/modernizr/feature-detects/css-overflow-scrolling.js"></script>
+        <script src="bower_components/modernizr-test_position_fixed_ios/modernizr-test_position_fixed_ios.js"></script>
 
         <script src="bower_components/jquery/jquery.min.js"></script>
 
-        <script src="scripts/modernizr.test.js"></script>
     </head>
     <body>
         <h1>Heart.css</h1>
 
         <h2>Layer</h2>
         <iframe src="html/layer.html" frameborder="0" class="fake-viewport"></iframe>
+        <a href="html/layer.html">Open it</a>
 
         <h2>Topbar</h2>
         <div class="fake-viewport">
@@ -41,6 +44,10 @@
 
         <h2>Layer-Scrollable</h2>
         <iframe src="html/layer-scrollable.html" frameborder="0" class="fake-viewport"></iframe>
+        <a href="html/layer-scrollable.html">Open it</a>
+
+        <iframe src="html/layer-scrollable-small.html" frameborder="0" class="fake-viewport"></iframe>
+        <a href="html/layer-scrollable-small.html">Open it</a>
         
         <h2>Layer-scrollable + Topbar + Bottombar</h2>
         <div class="fake-viewport">
@@ -57,30 +64,12 @@
         </div>
 
         <h2>Animation-layout</h2>
-        <!--<div class="fake-viewport">
-            <div class="layer animation-layout">
-                <div id="page1" class="layer current">
-                    <h3>Page 1</h3>
-                    <button id="page1-button">Got to Page 2</button>
-                </div>
-                <div id="page2" class="layer">
-                    <h3>Page 2</h3>
-                    <button id="page2-button">Back to Page 1</button>
-                </div>
-            </div>
-        </div>-->
         <iframe src="html/animation-layout.html" frameborder="0" class="fake-viewport"></iframe>
+        <a href="html/animation-layout.html">Open it</a>
 
         <h2>Split-layout</h2>
-        <!--<div class="fake-viewport">
-            <div class="split-layout">
-                <div class="aside-layer"></div>
-                <div class="content-layer">
-                    <button id="split-button" class="button-split">o</button>
-                </div>
-            </div>
-        </div>-->
         <iframe src="html/split-layout.html" frameborder="0" class="fake-viewport"></iframe>
+        <a href="html/split-layout.html">Open it</a>
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
