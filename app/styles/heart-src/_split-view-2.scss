@@ -1,0 +1,130 @@
+//$largeurMenu :320px - $height-topbar;
+$largeurMenu : 100%;
+.split-view{
+	@extend .page-layout;
+	-webkit-overflow-scrolling:auto;
+	overflow: hidden;
+	>.aside-view{
+		@extend .page-layout;
+		width: 320px;
+		z-index:1;
+	}
+	>.content-view{
+		@extend .page-layout;
+		left: 320px;
+		//width: -webkit-calc(100% - #{$largeurMenu});
+		//width: calc(100% - #{$largeurMenu});
+		z-index:2;
+	}
+	.button-split{
+		display:none;
+	}
+}
+
+//FALLBACK OLD BROWSER (like Android 2.X)
+.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
+
+	.split-view{
+		min-height: 100%;
+		@include display-flex;
+		>.aside-view, >.content-view{
+			@include display-flex;
+			@include flex-direction(column);
+			/*>.page-layout{
+				@include flex(1);
+			}*/
+		}
+	}
+	.split-view>.aside-view{
+		position:relative;
+		min-height: 100%;
+	}
+	.split-view>.content-view{
+		left:auto;
+		@include flex(1);
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	.split-view{
+		-webkit-perspective: 1000px;
+	    perspective: 1000px;
+	    -webkit-perspective-origin: 50% 50%;
+        perspective-origin: 50% 50%;
+        -webkit-transform-style: preserve-3d;
+	    transform-style: preserve-3d;
+
+		>.aside-view, >.content-view{
+			-webkit-transition-property: -webkit-transform;
+			transition-property: transform;
+			-webkit-transition-duration:200ms;
+			transition-duration:200ms;
+			-webkit-transition-timing-function: ease;
+			transition-timing-function: ease;
+
+			-webkit-backface-visibility: hidden;
+		}
+		>.aside-view{
+			width: $largeurMenu;
+			//display: none;
+
+			-webkit-transform: translate3d(-20%, 0, 0);
+			transform: translate3d(-20%, 0, 0);
+		}
+		>.content-view{
+			left:0;
+			width: 100%;
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+		&.open-menu{
+			>.aside-view{
+				//display: block;
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+			>.content-view{
+				-webkit-transform: translate3d($largeurMenu, 0, 0);
+				transform: translate3d($largeurMenu, 0, 0);
+			}
+		}
+
+		.button-split{
+			//@include display-flex;
+			display:block;
+		}
+	}
+
+
+	.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
+		.split-view{
+			>.aside-view{
+				position:absolute;
+				display: none;
+			}
+			>.content-view{
+				//position:static;
+				//@include flex(0);
+				//left:;
+			}
+			&.open-menu{
+				display:block;
+				>.aside-view{
+					position:static;
+					display: block;
+				}
+				>.content-view{
+					position:absolute;
+					left:$largeurMenu;
+					-webkit-transform: none;
+					transform: none;
+					bottom:0;
+					overflow-y: hidden;
+				}
+			}
+		}
+		
+	}
+
+}
