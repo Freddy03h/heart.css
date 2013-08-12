@@ -1,6 +1,9 @@
 @import "compass/css3";
 @import "../../bower_components/compass-flex/lib/flex";
 
+$height-bottombar: 50px !default;
+$height-topbar: 44px !default;
+
 body.layer{
 	overflow: hidden;
 	margin:0;
