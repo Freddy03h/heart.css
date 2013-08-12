@@ -1,16 +1,22 @@
 .dissolve.in, .dissolve.out{
 	-webkit-animation-duration: 200ms;
 	animation-duration: 200ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
 }
 
 .dissolve.in {
     -webkit-animation-name: dissolveIn;
     animation-name: dissolveIn;
+    z-index:2;
 }
 
 .dissolve.out {
     -webkit-animation-name: dissolveOut;
     animation-name: dissolveOut;
+    z-index:1;
 }
 
 @-webkit-keyframes dissolveIn {
@@ -27,7 +33,7 @@
         opacity: 1;
     } 
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
 
@@ -45,6 +51,6 @@
         opacity: 1;
     } 
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }

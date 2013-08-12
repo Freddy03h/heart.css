@@ -1,5 +1,4 @@
 .animation-layout > :not(.current) {
-    //display: none;
 	visibility: hidden;
 	opacity:0;
 }
@@ -25,18 +24,12 @@
 	.animation-layout > * {
 		width: 100%;
 		position: absolute;
-		//display: block;
-		//visibility: visible;
-		//opacity:1;
 
-		//-webkit-perspective: 1000;
 		-webkit-backface-visibility: hidden;
 	}
 	.animation-layout > :not(.current) {
-		//display: none;
 		visibility: hidden;
 		opacity:0;
-		z-index:1;
 	}
 	.appleios{
 		.animation-layout > :not(.current) {
@@ -44,19 +37,9 @@
 		}
 	}
 
-    .in, .out {
-        //-webkit-animation-duration: 400ms;
-        -webkit-animation-fill-mode: both;
-        -webkit-animation-timing-function: ease;
-        //animation-duration: 400ms;
-        animation-fill-mode: both;
-        animation-timing-function: ease;
-    }
-
 }
 
 /***************/
-
 
 @import "animation/slide-left";
 @import "animation/slide-right";
