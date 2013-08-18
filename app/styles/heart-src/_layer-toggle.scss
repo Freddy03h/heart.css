@@ -1,4 +1,4 @@
-%toggle-layer{
+%layer-toggle{
 	@extend .layer;
 
 	visibility: hidden;
@@ -28,7 +28,7 @@
 	
 }
 .no-cssanimations, .no-csstransforms3d, .no-positionfixed{
-	%toggle-layer{
+	%layer-toggle{
 		@include transition(none);
 		display:none;
 		&.open{
@@ -38,8 +38,8 @@
 	
 }
 
-.toggle-layer{
-	@extend %toggle-layer;
+.layer-toggle{
+	@extend %layer-toggle;
 
 	-webkit-transform: translate3d(0, -100%, 0);
 	transform: translate3d(0, -100%, 0);
@@ -51,8 +51,16 @@
 
 }
 
-.toggle-layer-fade{
-	@extend %toggle-layer;
+.layer-toggle-fade{
+	@extend %layer-toggle;
+	opacity:0;
+	&.open{
+		opacity:1;
+	}
+}
+
+.layer-toggle-pop{
+	@extend %layer-toggle;
 
 	-webkit-transform: scale(0.5) translate3d(0, -25%, 0);
 	transform: scale(0.5) translate3d(0, -25%, 0);
@@ -63,5 +71,4 @@
 		transform: scale(1) translate3d(0, 0, 0);
 		opacity:1;
 	}
-
 }

@@ -3,10 +3,20 @@ $split-min-width: 320px !default;
 $split-width-aside: $split-min-width - $split-width-content-extend;
 $split-width-breakpoint: 570px !default;
 
-%split-layout{
+%layout-split{
 	@extend .layer;
 	-webkit-overflow-scrolling:auto;
 	overflow: hidden;
+	>.aside-layer, >.content-layer{
+		-webkit-transition-property: -webkit-transform;
+		transition-property: transform;
+		-webkit-transition-duration:200ms;
+		transition-duration:200ms;
+		-webkit-transition-timing-function: ease;
+		transition-timing-function: ease;
+
+		-webkit-backface-visibility: hidden;
+	}
 	>.aside-layer{
 		@extend .layer;
 		width: $split-width-aside;
@@ -23,12 +33,19 @@ $split-width-breakpoint: 570px !default;
 		display:none;
 	}
 	@media screen and (max-width: $split-width-breakpoint) {
-		-webkit-perspective: 1000px;
-		perspective: 1000px;
-		-webkit-perspective-origin: 50% 50%;
-		perspective-origin: 50% 50%;
-		-webkit-transform-style: preserve-3d;
-		transform-style: preserve-3d;
+		// -webkit-perspective: 1000px;
+		// perspective: 1000px;
+		// -webkit-perspective-origin: 50% 50%;
+		// perspective-origin: 50% 50%;
+		// -webkit-transform-style: preserve-3d;
+		// transform-style: preserve-3d;
+		>.aside-layer{
+			width: $split-width-aside;
+		}
+		>.content-layer{
+			left:0;
+			width: 100%;
+		}
 		.button-split{
 			display:block;
 		}
@@ -38,7 +55,7 @@ $split-width-breakpoint: 570px !default;
 //FALLBACK OLD BROWSER (like Android 2.X)
 .no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 
-	%split-layout{
+	%layout-split{
 		min-height: 100%;
 		@include display-flex;
 		>.aside-layer, >.content-layer{
@@ -61,11 +78,7 @@ $split-width-breakpoint: 570px !default;
 				position:absolute;
 				display: none;
 			}
-			>.content-layer{
-				//position:static;
-				//@include flex(0);
-				//left:;
-			}
+			
 			&.open{
 				display:block;
 				>.aside-layer{
@@ -86,35 +99,19 @@ $split-width-breakpoint: 570px !default;
 
 }
 
-.split-layout{
-	@extend %split-layout;
+.layout-split{
+	@extend %layout-split;
 	@media screen and (max-width: $split-width-breakpoint) {
-		>.aside-layer, >.content-layer{
-			-webkit-transition-property: -webkit-transform;
-			transition-property: transform;
-			-webkit-transition-duration:200ms;
-			transition-duration:200ms;
-			-webkit-transition-timing-function: ease;
-			transition-timing-function: ease;
-
-			-webkit-backface-visibility: hidden;
-		}
 		>.aside-layer{
-			width: $split-width-aside;
-			//display: none;
-
 			-webkit-transform: translate3d(-20%, 0, 0);
 			transform: translate3d(-20%, 0, 0);
 		}
-		>.content-layer{
-			left:0;
-			width: 100%;
+		/*>.content-layer{
 			-webkit-transform: translate3d(0, 0, 0);
 			transform: translate3d(0, 0, 0);
-		}
+		}*/
 		&.open{
 			>.aside-layer{
-				//display: block;
 				-webkit-transform: translate3d(0, 0, 0);
 				transform: translate3d(0, 0, 0);
 			}
@@ -126,35 +123,17 @@ $split-width-breakpoint: 570px !default;
 	}
 }
 
-.split-layout-carousel{
-	@extend %split-layout;
+.layout-split-carousel{
+	@extend %layout-split;
 	@media screen and (max-width: $split-width-breakpoint) {
-		>.aside-layer, >.content-layer{
-			-webkit-transition-property: -webkit-transform;
-			transition-property: transform;
-			-webkit-transition-duration:300ms;
-			transition-duration:300ms;
-			-webkit-transition-timing-function: ease-in-out;
-			transition-timing-function: ease-in-out;
-
-			-webkit-backface-visibility: hidden;
-		}
 		>.aside-layer{
-			width: $split-width-aside;
-			//display: none;
-
 			-webkit-transform: translateZ(-100px) rotateY(25deg);
 			transform: translateZ(-100px) rotateY(25deg);
 		}
-		>.content-layer{
-			left:0;
-			width: 100%;
-		}
 		&.open{
 			>.aside-layer{
-				//display: block;
-				-webkit-transform: translateZ(0) rotateY(0deg);
-				transform: translateZ(0) rotateY(0deg);
+				-webkit-transform: none;
+				transform: none;
 			}
 			>.content-layer{
 				-webkit-transform: translateX($split-width-aside);

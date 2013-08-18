@@ -7,7 +7,6 @@ $height-topbar: 44px !default;
 body{
 	overflow: hidden;
 	margin:0;
-	
 }
 .layer{
 	position: absolute;
@@ -77,9 +76,9 @@ body{
 	}
 }
 
-@import "scrollable";
-@import "navbar";
+@import "layer-scrollable";
+@import "layer-toggle";
+@import "layout-split";
+@import "layout-animation";
+//@import "navbar";
 //@import "tabbar";
-@import "split-view";
-@import "animation-region";
-@import "toggle-menu";

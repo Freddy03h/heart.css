@@ -1,17 +1,17 @@
-.animation-layout > :not(.current) {
+.layout-animation > :not(.current) {
 	visibility: hidden;
 	opacity:0;
 }
 
 .appleios{
-	.animation-layout > :not(.current) {
+	.layout-animation > :not(.current) {
 	    display: none;
 	}
 }
 
 .cssanimations.csstransforms3d.positionfixed  {
 
-	.animation-layout{
+	.layout-animation{
         -webkit-perspective: 1000px;
 	    perspective: 1000px;
         -webkit-perspective-origin: 50% 50%;
@@ -21,18 +21,18 @@
         
 	    overflow: hidden;
 	}
-	.animation-layout > * {
+	.layout-animation > * {
 		width: 100%;
 		position: absolute;
 
 		-webkit-backface-visibility: hidden;
 	}
-	.animation-layout > :not(.current) {
+	.layout-animation > :not(.current) {
 		visibility: hidden;
 		opacity:0;
 	}
 	.appleios{
-		.animation-layout > :not(.current) {
+		.layout-animation > :not(.current) {
 		    display: none;
 		}
 	}

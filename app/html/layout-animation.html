@@ -27,13 +27,27 @@
 
         <script src="/bower_components/jquery/jquery.min.js"></script>
     </head>
-    <body class="layer">
+    <body>
 
-            <div class="layer">
-                <button class="toggle-button">o</button>
-            </div>
-            <div id="toggle-layer" class="toggle-layer">
-                <button class="toggle-button" style="float:right;">x</button>
+            <div class="layer layout-animation">
+                <div id="page1" class="layer current">
+                    <h3>Page 1</h3>
+                    <button id="page1-button">Got to Page 2</button> with 
+                    <select name="" id="page1-select">
+                        <option value="slideleft" selected>Slide Left</option>
+                        <option value="slideright">Slide Right</option>
+                        <option value="dissolve">Dissolve</option>
+                    </select> animation
+                </div>
+                <div id="page2" class="layer">
+                    <h3>Page 2</h3>
+                    <button id="page2-button">Back to Page 1</button> with 
+                    <select name="" id="page2-select">
+                        <option value="slideleft">Slide Left</option>
+                        <option value="slideright" selected>Slide Right</option>
+                        <option value="dissolve">Dissolve</option>
+                    </select> animation
+                </div>
             </div>
 
             <!-- build:js scripts/main.js -->

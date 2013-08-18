@@ -34,7 +34,7 @@ animationPageTwoButton.on('click', function(){
 
 ////////
 
-var splitLayout = $('#split-layout');
+var splitLayout = $('#layout-split');
 var splitButton = $('#split-button');
 
 splitButton.on('click', function(){
@@ -44,7 +44,7 @@ splitButton.on('click', function(){
 
 ////////
 
-var toggleLayer = $('#toggle-layer');
+var toggleLayer = $('#layer-toggle');
 var toggleButton = $('.toggle-button');
 
 toggleButton.on('click', function(){

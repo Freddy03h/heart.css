@@ -3,7 +3,7 @@
 body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+    color: #ecf0f1;
 }
 
 p{
@@ -20,31 +20,35 @@ p{
 }
 
 .layer{
-    background-color: cyan;
+    background-color: #95a5a6;
 }
 .topbar {
-    background-color: orange;
+    background-color: #e74c3c;
 }
 .bottombar {
-    background-color: red;
+    background-color: #e67e22;
 }
 .layer-scrollable{
-    background-color: pink !important;
+    background-color: #f1c40f !important;
 }
-#toggle-layer{
-    background-color: purple !important;
+#layer-toggle{
+    background-color: #9b59b6 !important;
 }
 
 #page1{
-    background-color: green !important;
+    background-color: #2ecc71 !important;
 }
 #page2{
-    background-color: blue !important;
+    background-color: #1abc9c !important;
 }
 
 .aside-layer{
-    background-color: olive !important;
+    background-color: #34495e !important;
 }
 .content-layer{
-    background-color: yellow !important;
+    background-color: #3498db !important;
+}
+
+.layout-split .layer-scrollable {
+    background-color: transparent !important;
 }
