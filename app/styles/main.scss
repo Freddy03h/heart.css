@@ -19,14 +19,6 @@ p{
     line-height: 44px;
 }
 
-.fake-viewport{
-    display:block;
-    position:relative;
-    width: 320px;
-    height: 480px;
-    background-color: #eee;
-}
-
 .layer{
     background-color: cyan;
 }
@@ -39,7 +31,7 @@ p{
 .layer-scrollable{
     background-color: pink !important;
 }
-.toggle-layer{
+#toggle-layer{
     background-color: purple !important;
 }
 

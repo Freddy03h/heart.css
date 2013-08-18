@@ -2,9 +2,28 @@
 	@extend .layer;
 
 	visibility: hidden;
+	.appleios &{
+		left: 100% !important;
+	}
+
+	-webkit-backface-visibility: hidden;
+
+	-webkit-transition-property: all, left;
+	transition-property: all, left;
+	-webkit-transition-duration:200ms, 0;
+	transition-duration:200ms, 0;
+	-webkit-transition-timing-function: ease, linear;
+	transition-timing-function: ease, linear;
+	-webkit-transition-delay: 0, 200ms;
+	transition-delay: 0, 200ms;
 
 	&.open{
 		visibility: visible;
+		-webkit-transition-delay: 0;
+		transition-delay: 0;
+		.appleios &{
+			left: 0 !important;
+		}
 	}
 	
 }
@@ -13,7 +32,7 @@
 		@include transition(none);
 		display:none;
 		&.open{
-			display:block;
+			display: block;
 		}
 	}
 	
@@ -21,15 +40,6 @@
 
 .toggle-layer{
 	@extend %toggle-layer;
-
-	-webkit-transition-property: -webkit-transform, visibility;
-	transition-property: transform, visibility;
-	-webkit-transition-duration:200ms;
-	transition-duration:200ms;
-	-webkit-transition-timing-function: ease;
-	transition-timing-function: ease;
-
-	-webkit-backface-visibility: hidden;
 
 	-webkit-transform: translate3d(0, -100%, 0);
 	transform: translate3d(0, -100%, 0);
@@ -43,15 +53,6 @@
 
 .toggle-layer-fade{
 	@extend %toggle-layer;
-
-	-webkit-transition-property: -webkit-transform, visibility, opacity;
-	transition-property: transform, visibility, opacity;
-	-webkit-transition-duration:200ms;
-	transition-duration:200ms;
-	-webkit-transition-timing-function: ease;
-	transition-timing-function: ease;
-
-	-webkit-backface-visibility: hidden;
 
 	-webkit-transform: scale(0.5) translate3d(0, -25%, 0);
 	transform: scale(0.5) translate3d(0, -25%, 0);

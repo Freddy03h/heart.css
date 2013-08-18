@@ -11,7 +11,7 @@
 .cssanimations.csstransforms3d.positionfixed  {
 	.layer-scrollable {
 		@extend .layer;
-        -webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
+        //-webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
         .wrap{
             overflow: auto;
             min-height: 100%;

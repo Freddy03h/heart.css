@@ -1,0 +1,17 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+p{
+    margin: 1em;
+}
+
+.fake-viewport{
+    display:block;
+    position:relative;
+    width: 320px;
+    height: 480px;
+    background-color: #eee;
+}
