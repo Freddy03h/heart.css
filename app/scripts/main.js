@@ -36,3 +36,13 @@ var splitButton = $('#split-button');
 splitButton.on('click', function(){
 	splitLayout.toggleClass('open');
 });
+
+
+////////
+
+var toggleLayer = $('.toggle-layer');
+var toggleButton = $('.toggle-button');
+
+toggleButton.on('click', function(){
+	toggleLayer.toggleClass('open');
+});

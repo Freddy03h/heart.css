@@ -1,45 +1,66 @@
-.toggle-menu{
-	@extend .scrollable;
-	@extend .with-topbar;
-	z-index:2;
+%toggle-layer{
+	@extend .layer;
 
 	visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
 
-	.wrap{
-		/*-webkit-perspective: 1000px;
-	    perspective: 1000px;
-	    -webkit-perspective-origin: 50% 50%;
-        perspective-origin: 50% 50%;
-	    -webkit-transform-style: preserve-3d;
-	    transform-style: preserve-3d;*/
-
-		@include transition(all 300ms ease);
-		@include transform(translate3d(0, -101%, 0));
-	}
-
-	.open &{
+	&.open{
 		visibility: visible;
-		.wrap{
-			@include transform(translate3d(0, 0, 0));
-		}
 	}
-
 	
 }
 .no-cssanimations, .no-csstransforms3d, .no-positionfixed{
-	.toggle-menu{
+	%toggle-layer{
 		@include transition(none);
-		.wrap{
-			@include transition(none);
-			@include transform(none);
-		}
 		display:none;
-	}
-	.open .toggle-menu{
-		display:block;
+		&.open{
+			display:block;
+		}
 	}
 	
+}
+
+.toggle-layer{
+	@extend %toggle-layer;
+
+	-webkit-transition-property: -webkit-transform, visibility;
+	transition-property: transform, visibility;
+	-webkit-transition-duration:200ms;
+	transition-duration:200ms;
+	-webkit-transition-timing-function: ease;
+	transition-timing-function: ease;
+
+	-webkit-backface-visibility: hidden;
+
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+
+	&.open{
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+}
+
+.toggle-layer-fade{
+	@extend %toggle-layer;
+
+	-webkit-transition-property: -webkit-transform, visibility, opacity;
+	transition-property: transform, visibility, opacity;
+	-webkit-transition-duration:200ms;
+	transition-duration:200ms;
+	-webkit-transition-timing-function: ease;
+	transition-timing-function: ease;
+
+	-webkit-backface-visibility: hidden;
+
+	-webkit-transform: scale(0.5) translate3d(0, -25%, 0);
+	transform: scale(0.5) translate3d(0, -25%, 0);
+	opacity:0;
+
+	&.open{
+		-webkit-transform: scale(1) translate3d(0, 0, 0);
+		transform: scale(1) translate3d(0, 0, 0);
+		opacity:1;
+	}
+
 }

@@ -10,6 +10,15 @@ p{
     margin: 1em;
 }
 
+.button-split, .toggle-button{
+    margin: 0;
+    padding: 0;
+    height: 44px;
+    width: 44px;
+    font-size: 30px;
+    line-height: 44px;
+}
+
 .fake-viewport{
     display:block;
     position:relative;
@@ -29,6 +38,9 @@ p{
 }
 .layer-scrollable{
     background-color: pink !important;
+}
+.toggle-layer{
+    background-color: purple !important;
 }
 
 #page1{
