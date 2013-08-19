@@ -8,14 +8,14 @@
 
 	-webkit-backface-visibility: hidden;
 
-	-webkit-transition-property: all, left;
-	transition-property: all, left;
-	-webkit-transition-duration:200ms, 0;
-	transition-duration:200ms, 0;
-	-webkit-transition-timing-function: ease, linear;
-	transition-timing-function: ease, linear;
-	-webkit-transition-delay: 0, 200ms;
-	transition-delay: 0, 200ms;
+	-webkit-transition-property: all, visibility, left;
+	transition-property: all, visibility, left;
+	-webkit-transition-duration:200ms, 0, 0;
+	transition-duration:200ms, 0, 0;
+	-webkit-transition-timing-function: ease, linear, linear;
+	transition-timing-function: ease, linear, linear;
+	-webkit-transition-delay: 0, 200ms, 200ms;
+	transition-delay: 0, 200ms, 200ms;
 
 	&.open{
 		visibility: visible;
