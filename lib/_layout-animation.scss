@@ -1,0 +1,60 @@
+.layout-animation > :not(.current) {
+	visibility: hidden;
+	opacity:0;
+}
+
+.appleios{
+	.layout-animation > :not(.current) {
+	    display: none;
+	}
+}
+
+.cssanimations.csstransforms3d.positionfixed  {
+
+	.layout-animation{
+        -webkit-perspective: 1000px;
+	    perspective: 1000px;
+        -webkit-perspective-origin: 50% 50%;
+        perspective-origin: 50% 50%;
+        -webkit-transform-style: preserve-3d;
+	    transform-style: preserve-3d;
+        
+	    overflow: hidden;
+	}
+	.layout-animation > * {
+		width: 100%;
+		position: absolute;
+
+		-webkit-backface-visibility: hidden;
+	}
+	.layout-animation > :not(.current) {
+		visibility: hidden;
+		opacity:0;
+	}
+	.appleios{
+		.layout-animation > :not(.current) {
+		    display: none;
+		}
+	}
+
+}
+
+/***************/
+
+@import "animation/slide-left";
+@import "animation/slide-right";
+@import "animation/dissolve";
+
+
+/*.in {
+	z-index: 50;
+}
+.in:after {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.out {
+	z-index: 0 !important;
+}*/

@@ -1,0 +1,84 @@
+@import "compass/css3";
+@import "../../bower_components/compass-flex/lib/flex";
+
+$height-bottombar: 50px !default;
+$height-topbar: 44px !default;
+
+body{
+	overflow: hidden;
+	margin:0;
+}
+.layer{
+	position: absolute;
+	//width:100%;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	@include box-sizing(border-box);
+	
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-perspective-origin: 50% 50%;
+	perspective-origin: 50% 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	&.with-topbar{
+		top: $height-topbar;
+	}
+	&.with-bottombar{
+		bottom: $height-bottombar;
+	}
+}
+.topbar{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: $height-topbar;
+	@include box-sizing(border-box);
+}
+.bottombar{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: $height-bottombar;
+	@include box-sizing(border-box);
+}
+
+//FALLBACK OLD BROWSER (like Android 2.X)
+.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
+	&, body{height:100%;}
+	.layer{
+		position: relative;
+		bottom:auto;
+		padding-top: 0;
+		padding-bottom: 0;
+		overflow-y:visible;
+	}
+	.topbar{
+		position: static;
+	}
+	.layer.with-topbar{
+		top:auto;
+	}
+	.bottombar{
+		position: static;
+	}
+	.layer.with-bottombar{
+		bottom:auto;
+	}
+}
+
+@import "layer-scrollable";
+@import "layer-toggle";
+@import "layout-split";
+@import "layout-animation";
+//@import "navbar";
+//@import "tabbar";

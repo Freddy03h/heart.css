@@ -1,0 +1,54 @@
+.slideleft.in, .slideleft.out{
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+
+.slideleft.in {
+    -webkit-animation-name: slideLeftIn;
+    animation-name: slideLeftIn;
+}
+
+.slideleft.out {
+    -webkit-animation-name: slideLeftOut;
+    animation-name: slideLeftOut;
+}
+
+@-webkit-keyframes slideLeftIn {
+    0% {
+        -webkit-transform: translate3d(100%, 0, 0);
+    } 
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+
+@-webkit-keyframes slideLeftOut {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+    } 
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes slideLeftIn {
+    0% {
+        transform: translate3d(100%, 0, 0);
+    } 
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideLeftOut {
+    0% {
+        transform: translate3d(0, 0, 0);
+    } 
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
