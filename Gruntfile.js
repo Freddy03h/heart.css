@@ -19,7 +19,8 @@ module.exports = function (grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        lib: 'lib'
     };
 
     grunt.initConfig({
@@ -97,6 +98,14 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
+            lib:{
+                files: [{
+                    dot: true,
+                    src: [
+                        '<%= yeoman.lib %>/*'
+                    ]
+                }]
+            },
             server: '.tmp'
         },
         jshint: {
@@ -146,23 +155,11 @@ module.exports = function (grunt) {
         /*uglify: {
             dist: {}
         },*/
-        rev: {
-            dist: {
-                files: {
-                    src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-                        '<%= yeoman.dist %>/styles/fonts/*'
-                    ]
-                }
-            }
-        },
         useminPrepare: {
             options: {
                 dest: '<%= yeoman.dist %>'
             },
-            html: '<%= yeoman.app %>/index.html'
+            html: '<%= yeoman.app %>/{,*/}*.html'
         },
         usemin: {
             options: {
@@ -203,7 +200,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>',
-                    src: '*.html',
+                    src: '{,*/}*.html',
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -230,6 +227,15 @@ module.exports = function (grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            lib:{
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/styles/heart-src',
+                    dest: '<%= yeoman.lib %>',
+                    src: '{,*/}*.scss'
+                }]
             }
         },
         concurrent: {
@@ -270,13 +276,14 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'clean:lib',
         'useminPrepare',
         'concurrent:dist',
         'concat',
         'cssmin',
         'uglify',
         'copy:dist',
-        'rev',
+        'copy:lib',
         'usemin'
     ]);
 

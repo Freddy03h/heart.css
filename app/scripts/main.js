@@ -1,3 +1,4 @@
+/*global FastClick:false */
 'use strict';
 
 $(function() {
