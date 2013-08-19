@@ -10,17 +10,17 @@
 
 	-webkit-transition-property: all, visibility, left;
 	transition-property: all, visibility, left;
-	-webkit-transition-duration:200ms, 0, 0;
-	transition-duration:200ms, 0, 0;
+	-webkit-transition-duration:200ms, 0ms, 0ms;
+	transition-duration:200ms, 0ms, 0ms;
 	-webkit-transition-timing-function: ease, linear, linear;
 	transition-timing-function: ease, linear, linear;
-	-webkit-transition-delay: 0, 200ms, 200ms;
-	transition-delay: 0, 200ms, 200ms;
+	-webkit-transition-delay: 0ms, 200ms, 200ms;
+	transition-delay: 0ms, 200ms, 200ms;
 
 	&.open{
 		visibility: visible;
-		-webkit-transition-delay: 0;
-		transition-delay: 0;
+		-webkit-transition-delay: 0ms;
+		transition-delay: 0ms;
 		.appleios &{
 			left: 0 !important;
 		}
