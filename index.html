@@ -1,0 +1,273 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="initial-scale=1.0">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/presentation.css">
+        <script src="scripts/vendor/modernizr.js"></script>
+        <script src="scripts/vendor/modernizr-test-css-overflow-scrolling.js"></script>
+        <script src="scripts/vendor/modernizr-test-position-fixed-ios.js"></script>
+        <script src="scripts/vendor/jquery.js"></script>
+
+    </head>
+    <body>
+        <div class="page">
+            <h1>Heart.css</h1>
+
+            <p>The Heart.css framework is a micro-framework to describe the Layout of a Single Page Application.</p>
+
+            <p>It built for design an Application instead of a Document and it not provide graphic or typograhpic style like Bootstrap or Fundation. This framework was build with the Mobile-first approach and it's completely Fluid. So you can easily use it to build your Responsive Web Design Application. It takes a lot use of <code>position: absolute</code> for cancel many of browser's behavior that are presume it run a Document.</p>
+
+            <p>Heart.css have been tested on Chrome Mac and Android, Firefox Mac and Android, Safari Mac and iOS, Android 4.X default browser, BlackBerry 10 browser, Opera Mac and Android, Internet Explorer 10 Windows Desktop, RT and Phone.</p>
+
+            <p><a href="https://github.com/Freddy03h/heart">Show on Github</a></p>
+
+            <h2>Layer</h2>
+            <div class="demo">
+                <iframe src="html/layer.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <p>It's the base of the entire framework. Many of the other component extend it.</p>
+<pre><code>&lt;div class="layer"&gt;&lt;/div&gt;</code></pre>
+                    <p>All the code show the DOM with the classes of Heart.css, but it can be used like the Sass way.</p>
+<pre><code>&lt;div id="content"&gt;&lt;/div&gt;</code></pre>
+<pre><code>#content{
+    @extend .layer;
+}</code></pre>
+                    <a href="html/layer.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+            
+
+            <h2>Topbar and Bottombar</h2>
+            <div class="demo">
+                <iframe src="html/layer-bar.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <p>Topbar and Bottombar respectively have a default of <code>44px</code> and <code>50px</code>. It can be change by redefine Sass variables : <code>$height-topbar</code> and <code>$height-bottombar</code>.</p>
+<pre><code>&lt;div class="topbar"&gt;&lt;/div&gt;
+&lt;div class="layer with-topbar with-bottombar"&gt;&lt;/div&gt;
+&lt;div class="bottombar"&gt;&lt;/div&gt;</code></pre>
+                    <a href="html/layer-bar.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+            
+            
+
+            <h2>Layer-Scrollable</h2>
+            <div class="demo">
+                <iframe src="html/layer-scrollable.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <p>The Layer-Scrollable is usefull if you want to create an intern scroll and disable the browser's behavior on the body's sroll.</p>
+                    <p>The CSS <code>overflow: scroll</code> cause many problems on a mobile browser. But iScroll isn't a good solution. A CSS scroll with always be faster than a JavaScript one.</p>
+                    <p>If you try this on iOS, the scroll have the native bounce and momentum effect but the body doesn't. You don't see the grey background texture of Safari anymore.</p>
+<pre><code>&lt;div class="layer"&gt;
+    &lt;div class="layer-scrollable"&gt;
+        &lt;div class="wrap">
+            …
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    <p>A Layer-Scrollable always have to be use in a other Layer element.</p>
+                    <a href="html/layer-scrollable.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+            
+            
+
+            <div class="demo">
+                <iframe src="html/layer-scrollable-small.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <p>It's the same structure than above but with less content. On iOS the content always bounce for disable the body's bounce.</p>
+                    <a href="html/layer-scrollable-small.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+
+            
+            
+            
+            <h2>Example App 1</h2>
+            <div class="demo">
+                <iframe src="html/app-example-1.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <p>The first example combine the Layer-Scrollable, Topbar and Bottombar.</p>
+<pre><code>&lt;div class="layer"&gt;
+    &lt;div class="topbar"&gt;&lt;/div&gt;
+    &lt;div class="layer-scrollable with-topbar with-bottombar"&gt;
+        &lt;div class="wrap">
+            …
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="bottombar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    <p>The advantage to use the Layer-Scrollable instead of the body's scroll with padding and the bar in fixed postion, additionnal to the fact that <code>position: fixed</code> is really buggy on mobile, is that the scrollbar never overlay the bar. You only describe the interface you want instead of cheating with a main scroll.</p>
+                    <a href="html/app-example-1.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+            
+            <h2>Layer-Toggle</h2>
+            <div class="demo">
+                <iframe src="html/layer-toggle.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <p>A layer-toggle is a Layer it can manage two states with a transition.</p>
+<pre><code>&lt;div class="layer"&gt;
+    …
+&lt;/div&gt;    
+&lt;div class="layer-toggle"&gt;
+    …
+&lt;/div&gt;</code></pre>
+                    <p>Add the class <code>.open</code> on the <code>.layer-toggle</code> to open it and remove the class to close it.</p>
+<pre><code>&lt;div class="layer-toggle open"&gt;
+    …
+&lt;/div&gt;</code></pre>
+                    <p>It's perfect for a modal view and it's easily extandable.</p>
+                    <a href="html/layer-toggle.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+            
+            <div class="demo">
+                <iframe src="html/layer-toggle-fade.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <p>This example use a custom layer-toggle, it just defined an open and close state like this way :</p>
+<pre><code>.layer-toggle-fade{
+    @extend %layer-toggle;
+    opacity:0;
+    &.open{
+        opacity:1;
+    }
+}</code></pre>
+                    <p>And in this example, layer-toggle are also Layer-Scrollable</p>
+<pre><code>&lt;div class="layer"&gt;
+    &lt;div class="layer-scrollable"&gt;
+        &lt;div class="wrap">
+            …
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="layer-toggle-fade layer-scrollable"&gt;
+        &lt;div class="wrap">
+            …
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    <a href="html/layer-toggle-fade.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+
+            <button class="button-vp-phone">Phone</button><button class="button-vp-tablette">Tablette</button>
+
+            <h2>Layout-Split</h2>
+            
+            <div class="demo">
+                <iframe src="html/layout-split.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                 <p>layout-split is a two columns layout. An a large and middle device screen the two layers appears and on a small screen only the content-layer appear, the layout-split have an state to see the aside-layer. It's a simple off-canvas layout.</p>   
+<pre><code>&lt;div class="layout-split"&gt;
+    &lt;div class="aside-layer"&gt;
+        …
+    &lt;/div&gt;
+    &lt;div class="content-layer"&gt;
+        …
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    <p>Just add the <code>.open</code> class to the <code>.layout-split</code></p>
+<pre><code>&lt;div class="layout-split open"&gt;
+    …
+&lt;/div&gt;</code></pre>
+                    <p>The dimension of the layout-split can be customed with Sass variables : <code>$split-min-width</code>, <code>$split-width-breakpoint</code> and <code>$split-width-content-extend</code></p>
+                    <a href="html/layout-split.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+
+            <div class="demo">
+                <iframe src="html/layout-split-carousel.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                 <p>Like the layer-toggle, you can easily define your own layout-split with your own transition.</p>
+<pre><code>.layout-split-carousel{
+    @extend %layout-split;
+    @media screen and (max-width: $split-width-breakpoint) {
+        >.aside-layer{
+            -webkit-transform: translateZ(-100px) rotateY(25deg);
+            transform: translateZ(-100px) rotateY(25deg);
+        }
+        &.open{
+            >.aside-layer{
+                -webkit-transform: none;
+                transform: none;
+            }
+            >.content-layer{
+                -webkit-transform: translateX($split-width-aside);
+                transform: translateX($split-width-aside);
+            }
+        }
+    }
+}</code></pre>
+<pre><code>&lt;div class="layout-split-carousel"&gt;
+    &lt;div class="aside-layer"&gt;
+        …
+    &lt;/div&gt;
+    &lt;div class="content-layer"&gt;
+        …
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    <a href="html/layout-split-carousel.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+
+            <h2>Example App 2</h2>
+            <div class="demo">
+                <iframe src="html/app-example-2.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+<pre><code>&lt;div class="layout-split"&gt;
+    &lt;div class="aside-layer"&gt;
+        &lt;div class="layer-scrollable"&gt;
+            &lt;div class="wrap">
+                …
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="content-layer"&gt;
+        &lt;div class="topbar"&gt;&lt;/div&gt;
+        &lt;div class="layer-scrollable with-topbar"&gt;
+            &lt;div class="wrap">
+                …
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="layer-toggle-fade layer-scrollable"&gt;
+    &lt;div class="wrap">
+        …
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <a href="html/app-example-2.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+
+            <h2>Layout-Animation</h2>
+            <div class="demo">
+                <iframe src="html/layout-animation.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <a href="html/layout-animation.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+
+            <h2>Example App 3</h2>
+            <div class="demo">
+                <iframe src="html/app-example-3.html" frameborder="0" class="fake-viewport"></iframe>
+                <div class="explanation">
+                    <a href="html/app-example-3.html" class="try-demo">Try the Demo</a>
+                </div>
+            </div>
+            
+        </div>
+
+        <script src="scripts/presentation.js"></script>
+
+</body>
+</html>
