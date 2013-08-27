@@ -21,11 +21,11 @@
         <div class="page">
             <h1>Heart.css</h1>
 
-            <p>Heart.css is a micro-framework to describe the Layout of a Single Page Application.</p>
+            <p>Heart.css is a micro-framework intended to describe the Layout of a Single Page Application.</p>
 
-            <p>It built for design an Application instead of a Document and it not provide graphic or typograhpic style like Bootstrap or Fundation. This framework was build with the Mobile-first approach and it's completely Fluid. So you can easily use it to build your Responsive Web Design Application. It takes a lot use of <code>position: absolute</code> for cancel many of browser's behavior that are presume it run a Document.</p>
+            <p>It is built for the design of an Application instead of a Document and it does not provide graphic or typograhpic style like Bootstrap or Fundation. This framework was built with the Mobile-first approach and it's completely Fluid. So you can easily use it to build your Responsive Web Design Application. It uses <code>position: absolute</code> a lot to cancel many browser's behaviors that presume they run a Document.</p>
 
-            <p>Heart.css have been tested on Chrome Mac and Android, Firefox Mac and Android, Safari Mac and iOS, Android 4.X default browser, BlackBerry 10 browser, Opera Mac and Android, Internet Explorer 10 Windows Desktop, RT and Phone.</p>
+            <p>Heart.css has been tested on Chrome Mac and Android, Firefox Mac and Android, Safari Mac and iOS, Android 4.X default browser, BlackBerry 10 browser, Opera Mac and Android, Internet Explorer 10 Windows 8, RT and Phone.</p>
 
             <p><a href="https://github.com/Freddy03h/heart">Show on Github</a></p>
 
@@ -33,9 +33,9 @@
             <div class="demo">
                 <iframe src="html/layer.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>It's the base of the entire framework. Many of the other component extend it.</p>
+                    <p>It's the base of the entire framework. Many of the other components extend it.</p>
 <pre><code>&lt;div class="layer"&gt;&lt;/div&gt;</code></pre>
-                    <p>All the code show the DOM with the classes of Heart.css, but it can be used like the Sass way.</p>
+                    <p>All the codes show the DOM with the classes of Heart.css, but it can also be used with the Sass <code>@extend</code> directive.</p>
 <pre><code>&lt;div id="content"&gt;&lt;/div&gt;</code></pre>
 <pre><code>#content{
     @extend .layer;
@@ -49,7 +49,7 @@
             <div class="demo">
                 <iframe src="html/layer-bar.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>Topbar and Bottombar respectively have a default of <code>44px</code> and <code>50px</code>. It can be change by redefine Sass variables : <code>$height-topbar</code> and <code>$height-bottombar</code>.</p>
+                    <p>Topbar and Bottombar have respective defaults of <code>44px</code> and <code>50px</code>. It can be changed by redefining Sass variables : <code>$height-topbar</code> and <code>$height-bottombar</code>.</p>
 <pre><code>&lt;div class="topbar"&gt;&lt;/div&gt;
 &lt;div class="layer with-topbar with-bottombar"&gt;&lt;/div&gt;
 &lt;div class="bottombar"&gt;&lt;/div&gt;</code></pre>
@@ -63,9 +63,9 @@
             <div class="demo">
                 <iframe src="html/layer-scrollable.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>The Layer-Scrollable is usefull if you want to create an intern scroll and disable the browser's behavior on the body's sroll.</p>
-                    <p>The CSS <code>overflow: scroll</code> cause many problems on a mobile browser. But iScroll isn't a good solution. A CSS scroll with always be faster than a JavaScript one.</p>
-                    <p>If you try this on iOS, the scroll have the native bounce and momentum effect but the body doesn't. You don't see the grey background texture of Safari anymore.</p>
+                    <p>The Layer-Scrollable is useful if you want to create an intern scroll and disable the browser's behavior on the body's scroll.</p>
+                    <p>The CSS <code>overflow: scroll</code> causes many problems on a mobile browser. But iScroll isn't a good solution. A CSS scroll will always be faster than a JavaScript one.</p>
+                    <p>If you try this on iOS, the scroll has the native bounce and momentum effect but the body doesn't. You don't see the grey background texture of Safari anymore.</p>
 <pre><code>&lt;div class="layer"&gt;
     &lt;div class="layer-scrollable"&gt;
         &lt;div class="wrap">
@@ -73,7 +73,7 @@
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    <p>A Layer-Scrollable always have to be use in a other Layer element.</p>
+                    <p>A Layer-Scrollable always has to be used in another Layer element.</p>
                     <a href="html/layer-scrollable.html" class="try-demo">Try the Demo</a>
                 </div>
             </div>
@@ -83,7 +83,7 @@
             <div class="demo">
                 <iframe src="html/layer-scrollable-small.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>It's the same structure than above but with less content. On iOS the content always bounce for disable the body's bounce.</p>
+                    <p>It's the same structure than above but with less content. On iOS the content always bounces to disable the body's bounce.</p>
                     <a href="html/layer-scrollable-small.html" class="try-demo">Try the Demo</a>
                 </div>
             </div>
@@ -95,7 +95,7 @@
             <div class="demo">
                 <iframe src="html/app-example-1.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>The first example combine the Layer-Scrollable, Topbar and Bottombar.</p>
+                    <p>The first example combines the Layer-Scrollable, Topbar and Bottombar.</p>
 <pre><code>&lt;div class="layer"&gt;
     &lt;div class="topbar"&gt;&lt;/div&gt;
     &lt;div class="layer-scrollable with-topbar with-bottombar"&gt;
@@ -105,7 +105,7 @@
     &lt;/div&gt;
     &lt;div class="bottombar"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    <p>The advantage to use the Layer-Scrollable instead of the body's scroll with padding and the bar in fixed postion, additionnal to the fact that <code>position: fixed</code> is really buggy on mobile, is that the scrollbar never overlay the bar. You only describe the interface you want instead of cheating with a main scroll.</p>
+                    <p>The advantage to use the Layer-Scrollable instead of the body's scroll with padding and the bar in fixed postion, in addition to to the fact that <code>position: fixed</code>  is really buggy on mobile, is that the scrollbar never overlay the bar. You only describe the interface you want instead of cheating with a main scroll.</p>
                     <a href="html/app-example-1.html" class="try-demo">Try the Demo</a>
                 </div>
             </div>
@@ -114,14 +114,14 @@
             <div class="demo">
                 <iframe src="html/layer-toggle.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>A layer-toggle is a Layer it can manage two states with a transition.</p>
+                    <p>A Layer-Toggle is a Layer that can manage two states with a transition.</p>
 <pre><code>&lt;div class="layer"&gt;
     …
 &lt;/div&gt;    
 &lt;div class="layer-toggle"&gt;
     …
 &lt;/div&gt;</code></pre>
-                    <p>Add the class <code>.open</code> on the <code>.layer-toggle</code> to open it and remove the class to close it.</p>
+                    <p>Add the class <code>.open</code> on the <code>.Layer-Toggle</code> to open it and remove the class to close it.</p>
 <pre><code>&lt;div class="layer-toggle open"&gt;
     …
 &lt;/div&gt;</code></pre>
@@ -133,7 +133,7 @@
             <div class="demo">
                 <iframe src="html/layer-toggle-fade.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>This example use a custom layer-toggle, it just defined an open and close state like this way :</p>
+                    <p>This example use a custom Layer-Toggle, it just defines an open and close state like this way :</p>
 <pre><code>.layer-toggle-fade{
     @extend %layer-toggle;
     opacity:0;
@@ -141,7 +141,7 @@
         opacity:1;
     }
 }</code></pre>
-                    <p>And in this example, layer-toggle are also Layer-Scrollable</p>
+                    <p>And in this example, Layer-Toggle is also Layer-Scrollable</p>
 <pre><code>&lt;div class="layer"&gt;
     &lt;div class="layer-scrollable"&gt;
         &lt;div class="wrap">
@@ -165,7 +165,7 @@
             <div class="demo">
                 <iframe src="html/layout-split.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                 <p>layout-split is a two columns layout. An a large and middle device screen the two layers appears and on a small screen only the content-layer appear, the layout-split have an state to see the aside-layer. It's a simple off-canvas layout.</p>   
+                 <p>Layout-Split is a two columns layout. On large and mid-size screen devices the two layers appear and on a small screen device only the content-layer appear, the Layout-Split has an state to see the aside-layer. It's a simple off-canvas layout.</p>   
 <pre><code>&lt;div class="layout-split"&gt;
     &lt;div class="aside-layer"&gt;
         …
@@ -178,7 +178,7 @@
 <pre><code>&lt;div class="layout-split open"&gt;
     …
 &lt;/div&gt;</code></pre>
-                    <p>The dimension of the layout-split can be customed with Sass variables : <code>$split-min-width</code>, <code>$split-width-breakpoint</code> and <code>$split-width-content-extend</code></p>
+                    <p>The dimension of the Layout-Split can be customized with Sass variables : <code>$split-min-width</code>, <code>$split-width-breakpoint</code> and <code>$split-width-content-extend</code></p>
                     <a href="html/layout-split.html" class="try-demo">Try the Demo</a>
                 </div>
             </div>
@@ -186,7 +186,7 @@
             <div class="demo">
                 <iframe src="html/layout-split-carousel.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                 <p>Like the layer-toggle, you can easily define your own layout-split with your own transition.</p>
+                 <p>Like the Layer-Toggle, you can easily define your own Layout-Split with your own transition.</p>
 <pre><code>.layout-split-carousel{
     @extend %layout-split;
     @media screen and (max-width: $split-width-breakpoint) {
