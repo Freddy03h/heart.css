@@ -93,7 +93,7 @@
             <div class="demo">
                 <iframe src="html/layer-scrollable-small.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>It's the same structure than above but with less content. On iOS the content always bounces to disable the body's bounce.</p>
+                    <p>It's the same structure as above but with less content. On iOS the content always bounces to disable the body's bounce.</p>
                     <a href="html/layer-scrollable-small.html" class="try-demo">Try the Demo</a>
                 </div>
             </div>
@@ -115,7 +115,7 @@
     &lt;/div&gt;
     &lt;div class="bottombar"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    <p>The advantage to use the Layer-Scrollable instead of the body's scroll with padding and the bar in fixed postion, in addition to to the fact that <code>position: fixed</code>  is really buggy on mobile, is that the scrollbar never overlay the bar. You only describe the interface you want instead of cheating with a main scroll.</p>
+                    <p>The advantage to uses the Layer-Scrollable instead of the body's scroll with padding and the bar in fixed postion, in addition to the fact that <code>position: fixed</code>  is really buggy on mobile, is that the scrollbar never overlays the bar. You only describe the interface you want instead of cheating with a main scroll.</p>
                     <a href="html/app-example-1.html" class="try-demo">Try the Demo</a>
                 </div>
             </div>
@@ -143,7 +143,7 @@
             <div class="demo">
                 <iframe src="html/layer-toggle-fade.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                    <p>This example use a custom Layer-Toggle, it just defines an open and close state like this way :</p>
+                    <p>This example uses a custom Layer-Toggle, it just defines an open and close state like this :</p>
 <pre><code>.layer-toggle-fade{
     @extend %layer-toggle;
     opacity:0;
@@ -175,7 +175,7 @@
             <div class="demo">
                 <iframe src="html/layout-split.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
-                 <p>Layout-Split is a two columns layout. On large and mid-size screen devices the two layers appear and on a small screen device only the content-layer appear, the Layout-Split has an state to see the aside-layer. It's a simple off-canvas layout.</p>   
+                 <p>Layout-Split is a 2-column layout. On large and mid-size screen devices the two layers appears and on a small screen device only the content-layer appear, the Layout-Split has a state to see the aside-layer. It's a simple off-canvas layout.</p>   
 <pre><code>&lt;div class="layout-split"&gt;
     &lt;div class="aside-layer"&gt;
         …
@@ -184,7 +184,7 @@
         …
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    <p>Just add the <code>.open</code> class to the <code>.layout-split</code></p>
+                    <p>Just add the <code>.open</code> class to the <code>.layout-split</code> to open it.</p>
 <pre><code>&lt;div class="layout-split open"&gt;
     …
 &lt;/div&gt;</code></pre>
@@ -247,11 +247,15 @@
                 …
             &lt;/div&gt;
         &lt;/div&gt;
+        &lt;div class="layer-toggle with-topbar"&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="layer-toggle-fade layer-scrollable"&gt;
-    &lt;div class="wrap">
-        …
+&lt;div class="layer-toggle"&gt;
+    &lt;div class="topbar"&gt;&lt;/div&gt;
+    &lt;div class="layer-scrollable with-topbar"&gt;
+        &lt;div class="wrap">
+            …
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 

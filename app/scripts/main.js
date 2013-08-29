@@ -45,9 +45,8 @@ splitButton.on('click', function(){
 
 ////////
 
-var toggleLayer = $('#layer-toggle');
 var toggleButton = $('.toggle-button');
 
 toggleButton.on('click', function(){
-	toggleLayer.toggleClass('open');
+	$('#'+($(this).data('toggle'))).toggleClass('open');
 });
