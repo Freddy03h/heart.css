@@ -8,6 +8,8 @@ $split-width-breakpoint: 570px !default;
 	-webkit-overflow-scrolling:auto;
 	overflow: hidden;
 	>.aside-layer, >.content-layer{
+		@extend .layer;
+
 		-webkit-transition-property: -webkit-transform;
 		transition-property: transform;
 		-webkit-transition-duration:200ms;
@@ -18,12 +20,10 @@ $split-width-breakpoint: 570px !default;
 		-webkit-backface-visibility: hidden;
 	}
 	>.aside-layer{
-		@extend .layer;
 		width: $split-width-aside;
 		z-index:1;
 	}
 	>.content-layer{
-		@extend .layer;
 		left: $split-width-aside;
 		//width: -webkit-calc(100% - #{$largeurMenu});
 		//width: calc(100% - #{$largeurMenu});
@@ -56,31 +56,34 @@ $split-width-breakpoint: 570px !default;
 .no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 
 	%layout-split{
-		min-height: 100%;
-		@include display-flex;
+		//min-height: 100%;
+		//@include display-flex;
 		>.aside-layer, >.content-layer{
-			@include display-flex;
-			@include flex-direction(column);
+			//@include display-flex;
+			//@include flex-direction(column);
 			//>.layer{
 			//	@include flex(1);
 			//}
 		}
 		>.aside-layer{
-			position:relative;
-			min-height: 100%;
+			float:left;
+			//position:absolute;
+			//min-height: 100%;
 		}
 		>.content-layer{
 			left:auto;
-			@include flex(1);
+			//@include flex(1);
+			-webkit-transform: none;
+			transform: none;
 		}
 		@media screen and (max-width: $split-width-breakpoint) {
 			>.aside-layer{
-				position:absolute;
+				//position:absolute;
 				display: none;
 			}
 			
 			&.open{
-				display:block;
+				//display:block;
 				>.aside-layer{
 					position:static;
 					display: block;
@@ -88,10 +91,11 @@ $split-width-breakpoint: 570px !default;
 				>.content-layer{
 					position:absolute;
 					left:$split-width-aside;
-					-webkit-transform: none;
-					transform: none;
-					bottom:0;
-					overflow-y: hidden;
+					//-webkit-transform: none;
+					//transform: none;
+					//bottom:0;
+
+					//overflow-y: hidden;
 				}
 			}
 		}

@@ -3,10 +3,11 @@
 
 $height-bottombar: 50px !default;
 $height-topbar: 44px !default;
-
 body{
-	overflow: hidden;
 	margin:0;
+}
+body.cssanimations.csstransforms3d.positionfixed {
+	overflow: hidden;
 }
 .layer{
 	position: absolute;
@@ -56,7 +57,7 @@ body{
 .no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 	&, body{height:100%;}
 	.layer{
-		position: relative;
+		position: static;
 		bottom:auto;
 		padding-top: 0;
 		padding-bottom: 0;

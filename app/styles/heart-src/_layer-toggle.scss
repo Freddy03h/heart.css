@@ -31,6 +31,7 @@
 	%layer-toggle{
 		@include transition(none);
 		display:none;
+		position:absolute;
 		&.open{
 			display: block;
 		}
