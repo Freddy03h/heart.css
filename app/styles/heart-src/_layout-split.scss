@@ -1,6 +1,7 @@
 $split-width-content-extend: 44px !default;
 $split-min-width: 320px !default;
-$split-width-aside: $split-min-width - $split-width-content-extend;
+$split-width-aside: $split-min-width - $split-width-content-extend !default;
+$split-width-aside-open: $split-width-aside !default;
 $split-width-breakpoint: 570px !default;
 
 %layout-split{
@@ -32,6 +33,7 @@ $split-width-breakpoint: 570px !default;
 	.button-split{
 		display:none;
 	}
+	
 	@media screen and (max-width: $split-width-breakpoint) {
 		// -webkit-perspective: 1000px;
 		// perspective: 1000px;
@@ -48,6 +50,11 @@ $split-width-breakpoint: 570px !default;
 		}
 		.button-split{
 			display:block;
+		}
+		&.open{
+			>.aside-layer{
+				width: $split-width-aside-open;
+			}
 		}
 	}
 }
@@ -120,8 +127,8 @@ $split-width-breakpoint: 570px !default;
 				transform: translate3d(0, 0, 0);
 			}
 			>.content-layer{
-				-webkit-transform: translate3d($split-width-aside, 0, 0);
-				transform: translate3d($split-width-aside, 0, 0);
+				-webkit-transform: translate3d($split-width-aside-open, 0, 0);
+				transform: translate3d($split-width-aside-open, 0, 0);
 			}
 		}
 	}
@@ -140,8 +147,8 @@ $split-width-breakpoint: 570px !default;
 				transform: none;
 			}
 			>.content-layer{
-				-webkit-transform: translateX($split-width-aside);
-				transform: translateX($split-width-aside);
+				-webkit-transform: translateX($split-width-aside-open);
+				transform: translateX($split-width-aside-open);
 			}
 		}
 	}

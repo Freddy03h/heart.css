@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "jquery": "1.9.1",
-    "fastclick": "~0.6.9"
+    "fastclick": "~0.6.9",
+    "font-awesome": "~3.2.1"
   }
 }

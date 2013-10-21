@@ -6,8 +6,17 @@ $height-topbar: 44px !default;
 body{
 	margin:0;
 }
-body.cssanimations.csstransforms3d.positionfixed {
+.cssanimations.csstransforms3d.positionfixed{
 	overflow: hidden;
+	& body{
+		overflow: hidden;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+	}
 }
 .layer{
 	position: absolute;
