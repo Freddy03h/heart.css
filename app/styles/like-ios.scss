@@ -99,6 +99,17 @@ button {
         -webkit-transform: none;
         transform: none;
     }
+
+    @media screen and (min-width: $split-width-breakpoint) {
+        top: 10%;
+        bottom: 20%;
+        left: 20%;
+        right: 20%;
+        box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+
+        -webkit-transform: translate3d(0, 130%, 0);
+        transform: translate3d(0, 130%, 0);
+    }
 }
 
 #layer-toggle-1, #layer-toggle-2{
@@ -117,16 +128,23 @@ button {
     ul{
         list-style: none;
         margin:0;
-        padding:0 12px;
+        padding:0;
         li{
-            padding:12px 0;
-            border-bottom: solid $color-grey 1px;
             cursor: pointer;
-            &:last-child{
+            &:first-child span{
                 border:none;
             }
             &:active{
                 background-color: $color-grey;
+                & + li span{
+                    border-top: solid transparent 1px;
+                }
+            }
+            span{
+                display: block;
+                margin:0 12px;
+                padding:12px 0;
+                border-top: solid $color-grey 1px;
             }
         }
     }
@@ -203,13 +221,17 @@ button {
             border-bottom: solid $color-grey 1px;
         }
         dt{
-            @include flex(1 90px);
+            //@include flex(1);
+            width: 90px;
         }
         dt.add-field{
-            @include flex(1 100%);
+            //@include flex(1 100%);
+            width: 100%;
         }
         dd{
-            @include flex(1 68%);
+            //@include flex(1 68%);
+            width: -webkit-calc(100% - 90px);
+            width: calc(100% - 90px);
             border-left: solid $color-grey 1px;
             padding-left: 12px;
         }
