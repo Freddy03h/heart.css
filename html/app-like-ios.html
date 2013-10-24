@@ -1,0 +1,166 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        
+        <link rel="stylesheet" href="../styles/like-ios.css">
+        <script src="../scripts/vendor/modernizr.js"></script>
+        <script src="../scripts/vendor/fastclick.js"></script>
+        <script src="../scripts/vendor/modernizr-test-css-overflow-scrolling.js"></script>
+        <script src="../scripts/vendor/modernizr-test-position-fixed-ios.js"></script>
+        <script src="../scripts/vendor/jquery.js"></script>
+    </head>
+    <body>
+
+            <div id="layout-split" class="layout-split open">
+                <div class="aside-layer">
+                    <div class="topbar" style="z-index:2">
+                        <div class="title">Contacts</div>
+                        <button id="add-button" class="toggle-button" data-toggle="layer-toggle-1"></button>
+                    </div>
+                    <div class="layer-scrollable with-topbar" style="z-index:1">
+                        <div class="wrap">
+                            <div class="title-section">A</div>
+                            <ul>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                            </ul>
+                            <div class="title-section">B</div>
+                            <ul>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                            </ul>
+                            <div class="title-section">C</div>
+                            <ul>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                            </ul>
+                            <div class="title-section">D</div>
+                            <ul>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                            </ul>
+                            <div class="title-section">E</div>
+                            <ul>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                            </ul>
+                            <div class="title-section">F</div>
+                            <ul>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                            </ul>
+                            <div class="title-section">G</div>
+                            <ul>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                                <li><span>Alexandrin <strong>Veronneau</strong></span></li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="content-layer">
+                    <div class="topbar" style="z-index:3">
+                        <button id="split-button" class="button-split"><span></span> Contacts</button>
+                        <button id="edit-button" class="toggle-button" data-toggle="layer-toggle-2">Modifier</button>
+                    </div>
+                    <div id="layer-toggle-2" class="layer-toggle-fade layer-scrollable with-topbar" style="z-index:2">
+                        <!--<button class="toggle-button" data-toggle="layer-toggle-2" style="float:right;">x</button>-->
+                        <div class="wrap person-form">
+                           <div class="info">
+                                <img src="http://fng.hotcw.com/images/sil-male.png">
+                                <div class="title">
+                                    <div>Alexandrin</div>
+                                    <div>Veronneau</div>
+                                </div>
+                            </div>
+                            <dl>
+                                <dt>mobile</dt>
+                                <dd>06 51 57 21 38</dd>
+                                <dt>email</dt>
+                                <dd>a.veronneau@tele.us</dd>
+                                <dt>adresse</dt>
+                                <dd>32 rue Gontier-Patin<br>13100 Aix-en-Provence</dd>
+                                <dt>anniversaire</dt>
+                                <dd>6 Septembre 1987</dd>
+                                <dt class="add-field">Ajouter un champ</dt>
+                            </dl> 
+                        </div>
+                    </div>
+                    <div class="layer-scrollable with-topbar" style="z-index:1">
+                        <div class="wrap person-show">
+                            <div class="info">
+                                <img src="http://fng.hotcw.com/images/sil-male.png">
+                                <div class="title">Alexandrin Veronneau</div>
+                            </div>
+                            <dl>
+                                <dt>mobile</dt>
+                                <dd>06 51 57 21 38</dd>
+                                <dt>email</dt>
+                                <dd>a.veronneau@tele.us</dd>
+                                <dt>adresse</dt>
+                                <dd>32 rue Gontier-Patin<br>13100 Aix-en-Provence</dd>
+                                <dt>anniversaire</dt>
+                                <dd>6 Septembre 1987</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="layer-toggle-1" class="layer-toggle-bottom">
+                <div class="topbar">
+                    <button class="toggle-button" data-toggle="layer-toggle-1">Annuler</button>
+                    <div class="title">Nouveau contact</div>
+                    <button class="toggle-button" data-toggle="layer-toggle-1">OK</button>
+                </div>
+                <div class="layer-scrollable with-topbar">
+                    <div class="wrap person-form">
+                        <div class="info">
+                            <img src="http://fng.hotcw.com/images/sil-male.png">
+                            <div class="title">
+                                <div>Prenom</div>
+                                <div>Nom</div>
+                            </div>
+                        </div>
+                        <dl>
+                            <dt class="add-field">Ajouter un mobile</dt>
+                            <dt class="add-field">Ajouter un email</dt>
+                            <dt class="add-field">Ajouter une adresse</dt>
+                            <dt class="add-field">Ajouter un anniversaire</dt>
+                            <dt class="add-field">Ajouter un champ</dt>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <script src="../scripts/main.js"></script>
+
+            <script type="text/javascript">
+                $('.aside-layer li').on('click', function(e){
+                    splitLayout.toggleClass('open');
+                });
+            </script>
+
+    </body>
+</html>
