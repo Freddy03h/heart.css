@@ -152,6 +152,11 @@ button {
 .content-layer{
     background-color: $color-white;
     box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    @media screen and (max-width: $split-width-breakpoint) {
+        .open & {
+            box-shadow: 0 0 8px rgba(0,0,0,0);
+        }
+    }
 }
 
 /////// Content
