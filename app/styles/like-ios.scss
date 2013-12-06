@@ -242,3 +242,20 @@ button {
         }
     }
 }
+
+@supports not (flex-wrap: wrap) {
+    .person-form dl { 
+        display: block;
+        font-size: 0;
+        dt, dd{
+            display: inline-block;
+        }
+        dt{
+            vertical-align: bottom;
+        }
+        dd{
+            font-size: 1rem;
+            @include box-sizing(border-box); 
+        }
+    }
+  }
