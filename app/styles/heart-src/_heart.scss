@@ -8,7 +8,7 @@ body{
 }
 .cssanimations.csstransforms3d.positionfixed{
 	overflow: hidden;
-	& body{
+	body{
 		overflow: hidden;
 
 		position: absolute;
@@ -16,6 +16,14 @@ body{
 		right: 0;
 		left: 0;
 		bottom: 0;
+	}
+	.layer{
+		-webkit-perspective: 1000px;
+		perspective: 1000px;
+		-webkit-perspective-origin: 50% 50%;
+		perspective-origin: 50% 50%;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
 	}
 }
 .layer{
@@ -30,13 +38,6 @@ body{
 	overflow-x: hidden;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
-
-	-webkit-perspective: 1000px;
-	perspective: 1000px;
-	-webkit-perspective-origin: 50% 50%;
-	perspective-origin: 50% 50%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
 
 	&.with-topbar{
 		top: $height-topbar;
