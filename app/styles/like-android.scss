@@ -1,28 +1,28 @@
-//$split-min-width: 640px;
-//$split-width-breakpoint: 640px;
+$split-min-width: 320px;
+$split-width-breakpoint: 1024px;
 $split-width-content-extend: 0;
-$split-width-aside-open: 100%;
+//$split-width-aside-open: 100%;
 
 $FontAwesomePath: "../bower_components/font-awesome/font" !default;
 
 @import "heart-src/heart";
 @import "../bower_components/font-awesome/scss/font-awesome";
 
-$color-blue: #0079F7;
+$color-blue: #33B5E5;
 $color-white: #FFFFFF;
-$color-grey-light: #F8F8F8;
-$color-grey: #C8C7CC;
-$color-grey-dark: #B2B2B2;
+$color-grey-light: #EEEEEE;
+$color-grey: #DDDDDD;
+$color-grey-dark: #535353;
 
 body {
     background: $color-white;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #000000;
+    color: $color-grey-dark;
     font-size: 16px;
 }
 
 p{
-    margin: 12px;
+    margin: 0;
 }
 
 /////// Buttons
@@ -71,9 +71,9 @@ button {
 /////// Layers & bars
 
 .topbar {
-    background-color: $color-grey-light;
+    background-color: $color-grey;
     //border-bottom: solid $color-grey-dark 1px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
     z-index: 2;
     @include display-flex;
     .title{
@@ -83,8 +83,33 @@ button {
     }
 }
 
-.layout-split{
+.layout-split-toggle{
     z-index: 1;
+    @extend %layout-split;
+    @media screen and (max-width: $split-width-breakpoint) {
+        >.aside-layer{
+            z-index: 2 !important;
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+        }
+        >.content-layer{
+            z-index: 1 !important;
+            &:before{
+                opacity:0;
+            }
+        }
+        &.open{
+            >.aside-layer{
+                -webkit-transform: none;
+                transform: none;
+            }
+            >.content-layer{
+                &:before{
+                    opacity:0.5;
+                }
+            }
+        }
+    }
 }
 
 .layer-toggle-fade{
@@ -123,22 +148,23 @@ button {
 }
 
 .aside-layer{
-    background-color: $color-white;
+    background-color: $color-grey-light;
     box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    //z-index: 2 !important;
     /*@media screen and (max-width: $split-width-breakpoint) {
         .open & {
             box-shadow: 0 0 8px rgba(0,0,0,0);
         }
     }*/
     .title-section{
-        margin-top: 12px;
+        margin-top: 14px;
         padding:6px 12px 2px;
         font-weight: bold;
         position: -webkit-sticky;
         position: sticky;
         text-transform: uppercase;
         font-size: 12px;
-        border-bottom: solid $color-grey-dark 2px;
+        border-bottom: solid #B9B9B9 2px;
     }
     ul{
         list-style: none;
@@ -151,7 +177,7 @@ button {
             padding:12px;
             @include display-flex;
 
-            &:first-child span{
+            &:first-child{
                 border:none;
             }
             &:active{
@@ -159,6 +185,10 @@ button {
                 /*& + li span{
                     border-top: solid transparent 1px;
                 }*/
+            }
+            &.selected{
+                background-color: $color-blue;
+                color: $color-white;
             }
             span{
                 //display: block;
@@ -175,6 +205,112 @@ button {
     }
 }
 .content-layer{
+    &:before{
+        content: " ";
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        background-color: black;
+        opacity:0;
+
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
+        -webkit-transition-duration:200ms;
+        transition-duration:200ms;
+        -webkit-transition-timing-function: ease;
+        transition-timing-function: ease;
+    }
+    //z-index: 1 !important;
     background-color: $color-white;
     
+}
+
+ul.list-mail{
+    list-style: none;
+    margin:0;
+    padding:0;
+    li{
+        height: 60px;
+        background-color: $color-grey-light;
+        border-bottom: solid $color-grey 1px;
+        @include display-flex;
+        .image{
+            @include display-flex;
+            width:60px;
+            img{
+                margin:auto 0 auto auto;
+                border:none;
+                background-color: $color-grey;
+                width:40px;
+                height:40px;
+            }
+        }
+        .info{
+            padding:0 12px;
+            @include flex(1);
+            @include display-flex;
+            @include flex-direction(column);
+            @include justify-content(center);
+        }
+        .person{
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .preview{
+            font-size: 12px;
+            p{
+                color: #999;
+            }
+            .title{
+                color: $color-grey-dark;
+            }
+        }
+        .detail{
+            padding: 0 12px;
+            @include display-flex;
+            @include flex-direction(column);
+            @include justify-content(space-around);
+        }
+        .date{
+            font-size: 12px;
+        }
+        .favoris{
+            text-align: right;
+            i{
+                @extend .icon-star-empty;
+                font-size: 18px;
+                @include icon-FontAwesome();
+            }
+        }
+    }
+    @media screen and (min-width: 770px) {
+        li{
+            .info, .detail{
+                //@include display-flex;
+            }
+            .info, .detail{
+                //@include align-items(baseline);
+                @include flex-direction(row);
+                @include align-items(center);
+            }
+            .detail{
+                //@include flex-direction(row);
+            }
+            .person{
+                padding-right: 12px;
+                @include flex(1);
+            }
+            .preview{
+                @include flex(2);
+            }
+            .favoris{
+                align-self: center;
+                text-align: center;
+                width:60px;
+            }
+        }
+        
+    }
 }
