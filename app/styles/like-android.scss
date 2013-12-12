@@ -127,11 +127,34 @@ button {
 .layout-split-toggle{
     z-index: 1;
     @extend %layout-split;
+
+    &:before{
+        z-index: 2 !important;
+        content: " ";
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        background-color: black;
+        opacity:0;
+
+        visibility: hidden;
+
+        -webkit-transition-property: opacity, visibility;
+        transition-property: opacity, visibility;
+        -webkit-transition-duration:200ms;
+        transition-duration:200ms;
+        -webkit-transition-timing-function: ease;
+        transition-timing-function: ease;
+    }
+
     @media screen and (max-width: $split-width-breakpoint) {
         >.aside-layer{
-            z-index: 2 !important;
+            z-index: 3 !important;
             -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
+            box-shadow: none;
         }
         >.content-layer{
             z-index: 1 !important;
@@ -140,14 +163,19 @@ button {
             }
         }
         &.open{
+            &:before{
+                visibility: visible;
+                opacity:0.5;
+            }
             >.aside-layer{
                 -webkit-transform: none;
                 transform: none;
+                @media screen and (max-width: $split-width-breakpoint) {
+                    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+                }
             }
             >.content-layer{
-                &:before{
-                    opacity:0.5;
-                }
+                
             }
         }
     }
@@ -190,10 +218,6 @@ button {
 
 .aside-layer{
     background-color: $color-grey-light;
-    //box-shadow: 0 0 8px rgba(0,0,0,0.3);
-    @media screen and (max-width: $split-width-breakpoint) {
-        box-shadow: 0 0 8px rgba(0,0,0,0.3);
-    }
     .title-section{
         margin-top: 14px;
         padding:6px 12px 2px;
@@ -286,23 +310,6 @@ button {
     }
 }
 .content-layer{
-    &:before{
-        content: " ";
-        position: absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-        background-color: black;
-        opacity:0;
-
-        -webkit-transition-property: opacity;
-        transition-property: opacity;
-        -webkit-transition-duration:200ms;
-        transition-duration:200ms;
-        -webkit-transition-timing-function: ease;
-        transition-timing-function: ease;
-    }
     background-color: $color-white;
 
     @media screen and (min-width: $split-width-breakpoint) {
@@ -413,9 +420,12 @@ ul.list-mail{
         }
         .person{
             font-size: 14px;
+            flex-shrink:0;
         }
         .preview{
+            flex-shrink:1;
             font-size: 12px;
+            overflow: hidden;
             p{
                 color: #999;
             }
