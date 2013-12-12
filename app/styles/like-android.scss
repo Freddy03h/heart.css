@@ -96,6 +96,10 @@ button {
         color: #DB3E3E;
         vertical-align: middle;
         font-size: 28px;
+
+        background-color: white;
+        padding: 0 4px;
+        border-radius: 2px;
     }
 }
 
@@ -236,9 +240,7 @@ button {
                 &.num{
                     padding:0 8px;
                     font-size: 12px;
-                    min-width: 40px;
-                    color: $color-white;
-                    
+                    min-width: 40px;                    
                     text-align: center;
                     padding: 2px 0;
                 }
@@ -256,6 +258,7 @@ button {
             &.social{
                 .num{
                     background-color: $color-social;
+                    color: $color-white;
                 }
                 i{
                     @extend .icon-user;
@@ -264,6 +267,7 @@ button {
             &.promotion{
                 .num{
                     background-color: $color-promotion;
+                    color: $color-white;
                 }
                 i{
                     @extend .icon-tags;
@@ -272,6 +276,7 @@ button {
             &.update{
                 .num{
                     background-color: $color-update;
+                    color: $color-white;
                 }
                 i{
                     @extend .icon-info-sign;
@@ -304,6 +309,77 @@ button {
         box-shadow: 0 0 8px rgba(0,0,0,0.3);
     }
     
+}
+
+ul.list-categories{
+    list-style: none;
+    margin:0;
+    padding:0;
+    li{
+        height: 44px;
+        padding:8px;
+        @include box-sizing(border-box);
+        @include display-flex;
+        @include align-items(center);
+    
+        .icon{
+            width:40px;
+            padding:4px 0;
+            background-color: $color-grey-light;
+            text-align: center;
+        }
+        .info{
+            @include flex(1);
+            padding: 0 8px;
+            .title{
+                font-weight: bold;
+                font-size: 13px;
+            }
+            .subtitle{
+                font-size: 12px;
+            }
+        }
+        .num{
+            font-size: 13px;
+            padding:2px 12px;
+        }
+
+
+        i{
+            font-size: 16px;
+            @include icon-FontAwesome();
+        }
+        &.social{
+            .num{
+                background-color: $color-social;
+                color: $color-white;
+            }
+            i{
+                @extend .icon-user;
+                color: $color-social;
+            }
+        }
+        &.promotion{
+            .num{
+                background-color: $color-promotion;
+                color: $color-white;
+            }
+            i{
+                @extend .icon-tags;
+                color: $color-promotion;
+            }
+        }
+        &.update{
+            .num{
+                background-color: $color-update;
+                color: $color-white;
+            }
+            i{
+                @extend .icon-info-sign;
+                color: $color-update;
+            }
+        }
+    }
 }
 
 ul.list-mail{
