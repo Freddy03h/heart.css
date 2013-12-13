@@ -34,7 +34,7 @@ $split-width-breakpoint: 570px !default;
 		display:none;
 	}
 	
-	@media screen and (max-width: $split-width-breakpoint) {
+	@media screen and (max-width: $split-width-breakpoint - 1) {
 		// -webkit-perspective: 1000px;
 		// perspective: 1000px;
 		// -webkit-perspective-origin: 50% 50%;
@@ -83,7 +83,7 @@ $split-width-breakpoint: 570px !default;
 			-webkit-transform: none;
 			transform: none;
 		}
-		@media screen and (max-width: $split-width-breakpoint) {
+		@media screen and (max-width: $split-width-breakpoint - 1) {
 			>.aside-layer{
 				//position:absolute;
 				display: none;
@@ -112,7 +112,7 @@ $split-width-breakpoint: 570px !default;
 
 .layout-split{
 	@extend %layout-split;
-	@media screen and (max-width: $split-width-breakpoint) {
+	@media screen and (max-width: $split-width-breakpoint - 1) {
 		>.aside-layer{
 			-webkit-transform: translate3d(-20%, 0, 0);
 			transform: translate3d(-20%, 0, 0);
@@ -136,7 +136,7 @@ $split-width-breakpoint: 570px !default;
 
 .layout-split-carousel{
 	@extend %layout-split;
-	@media screen and (max-width: $split-width-breakpoint) {
+	@media screen and (max-width: $split-width-breakpoint - 1) {
 		>.aside-layer{
 			-webkit-transform: translateZ(-100px) rotateY(25deg);
 			transform: translateZ(-100px) rotateY(25deg);

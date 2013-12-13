@@ -149,7 +149,7 @@ button {
         transition-timing-function: ease;
     }
 
-    @media screen and (max-width: $split-width-breakpoint) {
+    @media screen and (max-width: $split-width-breakpoint - 1) {
         >.aside-layer{
             z-index: 3 !important;
             -webkit-transform: translateX(-100%);
@@ -170,7 +170,7 @@ button {
             >.aside-layer{
                 -webkit-transform: none;
                 transform: none;
-                @media screen and (max-width: $split-width-breakpoint) {
+                @media screen and (max-width: $split-width-breakpoint - 1) {
                     box-shadow: 0 0 8px rgba(0,0,0,0.3);
                 }
             }
@@ -181,7 +181,7 @@ button {
     }
 }
 
-.layer-toggle-fade{
+/*.layer-toggle-fade{
     @extend %layer-toggle;
     opacity:0;
     &.open{
@@ -210,7 +210,7 @@ button {
         -webkit-transform: translate3d(0, 130%, 0);
         transform: translate3d(0, 130%, 0);
     }
-}
+}*/
 
 #layer-toggle-1, #layer-toggle-2{
     background-color: $color-white;
