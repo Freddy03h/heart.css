@@ -162,11 +162,25 @@ module.exports = function (grunt) {
             },
             html: '<%= yeoman.app %>/index.html'
             /*/
+            /*src: ['<%= yeoman.app %>/*.html', '<%= yeoman.app %>/html/*.html'],
             options: {
                 dest: '<%= yeoman.dist %>/html'
-            },
-            html: '<%= yeoman.app %>/html/*.html'
+            }*///,
+            //html: '<%= yeoman.app %>/html/*.html'
             //*/
+
+            presentation: {
+                src: '<%= yeoman.app %>/*.html',
+                options: {
+                    dest: '<%= yeoman.dist %>'
+                }
+            },
+            example: {
+                src: '<%= yeoman.app %>/html/*.html',
+                options: {
+                    dest: '<%= yeoman.dist %>/html'
+                }
+            }
         },
         usemin: {
             options: {

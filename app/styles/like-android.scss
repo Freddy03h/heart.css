@@ -3,7 +3,7 @@ $split-width-breakpoint: 1024px;
 $split-width-content-extend: 0;
 //$split-width-aside-open: 100%;
 
-$FontAwesomePath: "../bower_components/font-awesome/font" !default;
+$FontAwesomePath: "fonts" !default;
 
 @import "heart-src/heart";
 @import "../bower_components/font-awesome/scss/font-awesome";
