@@ -88,8 +88,8 @@ pre{
     }
 }
 
-@media screen and (max-width: 480px) {
-    .fake-viewport{
+@media screen and (max-width: 1024px) {
+    .fake-viewport, .button-vp-tablette, .button-vp-phone{
         display: none;
     }
 }
