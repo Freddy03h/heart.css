@@ -19,6 +19,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #000000;
     font-size: 16px;
+    -webkit-text-size-adjust: none;
 }
 
 p{
@@ -101,6 +102,9 @@ button {
     }
 
     @media screen and (min-width: $split-width-breakpoint) {
+        .appleios &, .appleios &.open{
+            left: 20% !important;
+        }
         top: 10%;
         bottom: 20%;
         left: 20%;
