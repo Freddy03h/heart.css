@@ -257,7 +257,7 @@ button {
                 color: $color-white;
             }
             span{
-                //display: block;
+                display: block;
                 //margin:0 12px;
                 &.title{
                     @include flex(1);
@@ -421,10 +421,12 @@ ul.list-mail{
         }
         .person{
             font-size: 14px;
+            -ms-flex-negative: 0;
             -webkit-flex-shrink:0;
             flex-shrink:0;
         }
         .preview{
+            -ms-flex-negative: 1;
             -webkit-flex-shrink:1;
             flex-shrink:1;
             font-size: 12px;
