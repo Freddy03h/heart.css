@@ -421,11 +421,14 @@ ul.list-mail{
         }
         .person{
             font-size: 14px;
+            -webkit-flex-shrink:0;
             flex-shrink:0;
         }
         .preview{
+            -webkit-flex-shrink:1;
             flex-shrink:1;
             font-size: 12px;
+            line-height: 13px;
             overflow: hidden;
             p{
                 color: #999;
