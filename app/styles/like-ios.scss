@@ -224,7 +224,7 @@ button {
         @include display-flex;
         @include flex-wrap(wrap);
         dt, dd{
-            box-sizing: border-box;
+            @include box-sizing(border-box);
             margin:6px 0 18px;
             padding-bottom: 12px;
             border-bottom: solid $color-grey 1px;
