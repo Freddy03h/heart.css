@@ -75,6 +75,7 @@ button {
     background-color: $color-grey-light;
     border-bottom: solid $color-grey-dark 1px;
     @include display-flex;
+    @include align-items(flex-start);
     .title{
         font-size: 18px;
         font-weight: bold;
@@ -168,6 +169,7 @@ button {
 %person{
     .info{
         @include display-flex;
+        @include align-items(flex-start);
         margin: 12px 0 28px 24px;
         img{
             width: 60px;
