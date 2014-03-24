@@ -50,7 +50,7 @@ button {
     }
 }
 
-#edit-button {
+.flexbox #edit-button {
     margin-left: auto;
 }
 
@@ -75,11 +75,14 @@ button {
     background-color: $color-grey-light;
     border-bottom: solid $color-grey-dark 1px;
     @include display-flex;
-    @include align-items(flex-start);
+    @include justify-content(space-between);
+    @include align-items(center);
     .title{
         font-size: 18px;
         font-weight: bold;
-        margin: auto;
+        .flexbox & {
+            margin: auto;
+        }
     }
 }
 
@@ -223,8 +226,14 @@ button {
         }
     }
     dl{
+
         @include display-flex;
-        @include flex-wrap(wrap);
+        .no-flexbox &{
+            @include flex-direction(column);
+        }
+        .flexbox &{
+            @include flex-wrap(wrap);
+        }
         dt, dd{
             @include box-sizing(border-box);
             margin:6px 0 18px;
