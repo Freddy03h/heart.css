@@ -1,12 +1,30 @@
 @import "compass/css3";
 @import "../../bower_components/compass-flex/lib/flex";
 
-$height-bottombar: 50px !default;
+$height-bottombar: 44px !default;
 $height-topbar: 44px !default;
-
 body{
-	overflow: hidden;
 	margin:0;
+}
+.cssanimations.csstransforms3d.positionfixed{
+	overflow: hidden;
+	body{
+		overflow: hidden;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+	}
+	.layer{
+		-webkit-perspective: 1000px;
+		perspective: 1000px;
+		-webkit-perspective-origin: 50% 50%;
+		perspective-origin: 50% 50%;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+	}
 }
 .layer{
 	position: absolute;
@@ -20,13 +38,6 @@ body{
 	overflow-x: hidden;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
-
-	-webkit-perspective: 1000px;
-	perspective: 1000px;
-	-webkit-perspective-origin: 50% 50%;
-	perspective-origin: 50% 50%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
 
 	&.with-topbar{
 		top: $height-topbar;
@@ -56,7 +67,7 @@ body{
 .no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 	&, body{height:100%;}
 	.layer{
-		position: relative;
+		position: static;
 		bottom:auto;
 		padding-top: 0;
 		padding-bottom: 0;

@@ -8,11 +8,16 @@
     to { -webkit-transform: rotate(180deg); }
 }
 
+.layer-scrollable {
+    @extend .layer;
+}
+
 .cssanimations.csstransforms3d.positionfixed  {
 	.layer-scrollable {
-		@extend .layer;
+		//@extend .layer;
         //-webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
         .wrap{
+            @include box-sizing(border-box);
             overflow: auto;
             min-height: 100%;
         }
@@ -21,7 +26,7 @@
     
     &.overflowscrolling.appleios{
         .layer-scrollable .wrap {
-            padding-bottom: 1px;
+            margin-bottom: 1px;
         }
         .pull-to-refresh {
             //@include display-flex;

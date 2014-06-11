@@ -31,6 +31,7 @@
 	%layer-toggle{
 		@include transition(none);
 		display:none;
+		position:absolute;
 		&.open{
 			display: block;
 		}
@@ -45,8 +46,8 @@
 	transform: translate3d(0, -100%, 0);
 
 	&.open{
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
+		-webkit-transform: none;
+		transform: none;
 	}
 
 }
