@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="styles/presentation.css"/>
         <script src="scripts/vendor/modernizr.js"></script>
         <script src="scripts/vendor/jquery.js"></script>
+        <script src="scripts/vendor/highlightjs.js"></script>
 
     </head>
     <body>
@@ -53,7 +54,7 @@
 <pre><code>&lt;div class="layer"&gt;&lt;/div&gt;</code></pre>
                     <p>All the codes show the DOM with the classes of Heart.css, but it can also be used with the Sass <code>@extend</code> directive.</p>
 <pre><code>&lt;div id="content"&gt;&lt;/div&gt;</code></pre>
-<pre><code>#content{
+<pre><code class="scss">#content{
     @extend .layer;
 }</code></pre>
                     <a href="html/layer.html" class="try-demo">Try the Demo</a>
@@ -150,7 +151,7 @@
                 <iframe src="html/layer-toggle-fade.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
                     <p>This example uses a custom Layer-Toggle, it just defines an open and close state like this :</p>
-<pre><code>.layer-toggle-fade{
+<pre><code class="scss">.layer-toggle-fade{
     @extend %layer-toggle;
     opacity:0;
     &.open{
@@ -203,7 +204,7 @@
                 <iframe src="html/layout-split-carousel.html" frameborder="0" class="fake-viewport"></iframe>
                 <div class="explanation">
                  <p>Like the Layer-Toggle, you can easily define your own Layout-Split with your own transition.</p>
-<pre><code>.layout-split-carousel{
+<pre><code class="scss">.layout-split-carousel{
     @extend %layout-split;
     @media screen and (max-width: $split-width-breakpoint) {
         >.aside-layer{
