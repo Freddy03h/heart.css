@@ -304,8 +304,11 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'copy:lib',
         'usemin'
+    ]);
+
+    grunt.registerTask('lib', [
+        'copy:lib'
     ]);
 
     grunt.registerTask('default', [
