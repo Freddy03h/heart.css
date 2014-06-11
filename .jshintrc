@@ -19,5 +19,7 @@
     "trailing": true,
     "smarttabs": true,
     "jquery": true,
-    "hljs": true
+    "predef": [
+      "hljs"
+    ]
 }
