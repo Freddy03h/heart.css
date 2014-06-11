@@ -146,7 +146,8 @@ module.exports = function (grunt) {
             lib:{
                 options: {
                     sassDir: '<%= yeoman.app %>/styles/heart',
-                    cssDir: '<%= yeoman.lib %>'
+                    cssDir: '<%= yeoman.lib %>',
+                    outputStyle: 'compressed'
                 }
             }
         },
