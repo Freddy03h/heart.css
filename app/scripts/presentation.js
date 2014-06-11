@@ -1,5 +1,7 @@
 'use strict';
 
+hljs.initHighlightingOnLoad();
+
 var phoneViewportButton = $('.button-vp-phone');
 var tabletteViewportButton = $('.button-vp-tablette');
 

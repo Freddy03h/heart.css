@@ -4,7 +4,8 @@
   "dependencies": {
     "modernizr": "~2.6.3",
     "modernizr-test_position_fixed_ios": "https://gist.github.com/1336369.git",
-    "compass-flex": "https://github.com/Freddy03h/compass-flex.git#~0.2.0"
+    "compass-flex": "https://github.com/Freddy03h/compass-flex.git#~0.2.0",
+    "highlightjs": "~8.0.0"
   },
   "devDependencies": {
     "jquery": "~1.11.1",

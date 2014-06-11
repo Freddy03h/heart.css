@@ -12,11 +12,9 @@ p{
 }
 
 pre{
-    margin: 1em 0;
-    padding: 1em;
-    background-color: #34495e;
-    color:#fff;
-    overflow-x: auto;
+    color: #DDD;
+    background: #272822;
+    padding: 0.5em;
 }
 
 .page{
@@ -60,6 +58,9 @@ pre{
     .explanation{
         @include flex(1);
         padding:0 1em;
+        > *:first-child {
+            margin-top: 0;
+        }
     }
 }
 
