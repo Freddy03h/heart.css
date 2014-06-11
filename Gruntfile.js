@@ -142,6 +142,12 @@ module.exports = function (grunt) {
                 options: {
                     debugInfo: true
                 }
+            },
+            lib:{
+                options: {
+                    sassDir: '<%= yeoman.app %>/styles/heart',
+                    cssDir: '<%= yeoman.lib %>'
+                }
             }
         },
         // not used since Uglify task does concat,
@@ -254,7 +260,7 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: '<%= yeoman.app %>/styles/heart-src',
-                    dest: '<%= yeoman.lib %>',
+                    dest: '<%= yeoman.lib %>/scss',
                     src: '{,*/}*.scss'
                 }]
             }
@@ -297,7 +303,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'clean:lib',
         'useminPrepare',
         'concurrent:dist',
         'concat',
@@ -308,6 +313,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('lib', [
+        'clean:lib',
+        'compass:lib',
         'copy:lib'
     ]);
 
