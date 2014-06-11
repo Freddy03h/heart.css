@@ -1,6 +1,6 @@
 {
   "name": "heart",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {
     "modernizr": "~2.6.3",
     "modernizr-test_position_fixed_ios": "https://gist.github.com/1336369.git",
