@@ -2,13 +2,13 @@
   "name": "heart",
   "version": "0.1.0",
   "dependencies": {
-    "modernizr": "~2.6.2",
+    "modernizr": "~2.6.3",
     "modernizr-test_position_fixed_ios": "https://gist.github.com/1336369.git",
     "compass-flex": "https://github.com/Freddy03h/compass-flex.git#~0.2.0"
   },
   "devDependencies": {
-    "jquery": "1.9.1",
-    "fastclick": "~0.6.9",
+    "jquery": "~1.11.1",
+    "fastclick": "~1.0.2",
     "font-awesome": "~3.2.1"
   }
 }
