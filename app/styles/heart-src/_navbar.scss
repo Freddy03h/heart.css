@@ -1,8 +1,5 @@
 .navbar{
 	@extend .topbar;
-	//@include display-flex;
-	//@include align-items(center);
-	//@include flex-direction(row);
 	.pull-left, .pull-right{
 		position:absolute;
 		top:0;

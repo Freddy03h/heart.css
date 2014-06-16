@@ -6,6 +6,7 @@ $split-width-aside-open: 100%;
 $FontAwesomePath: "fonts" !default;
 
 @import "heart-src/heart";
+@import "../bower_components/compass-flex/lib/flex";
 @import "../bower_components/font-awesome/scss/font-awesome";
 
 $color-blue: #0079F7;
