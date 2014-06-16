@@ -63,34 +63,28 @@ $split-width-breakpoint: 570px !default;
 .no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 
 	%layout-split{
-		//min-height: 100%;
-		//@include display-flex;
+
 		>.aside-layer, >.content-layer{
-			//@include display-flex;
-			//@include flex-direction(column);
-			//>.layer{
-			//	@include flex(1);
-			//}
+
 		}
 		>.aside-layer{
 			float:left;
-			//position:absolute;
-			//min-height: 100%;
+
 		}
 		>.content-layer{
 			left:auto;
-			//@include flex(1);
+
 			-webkit-transform: none;
 			transform: none;
 		}
 		@media screen and (max-width: $split-width-breakpoint - 1) {
 			>.aside-layer{
-				//position:absolute;
+
 				display: none;
 			}
 			
 			&.open{
-				//display:block;
+
 				>.aside-layer{
 					position:static;
 					display: block;
@@ -98,11 +92,7 @@ $split-width-breakpoint: 570px !default;
 				>.content-layer{
 					position:absolute;
 					left:$split-width-aside;
-					//-webkit-transform: none;
-					//transform: none;
-					//bottom:0;
 
-					//overflow-y: hidden;
 				}
 			}
 		}

@@ -3,9 +3,13 @@
 	opacity:0;
 }
 
+// bugfix : iOS don't like combination between overflow-scrolling-touch and visibility or opacity
+// I'll prefere display none to fix this bug but iOS don't like either when we concatene quickly
+//  insert an element in the dom, change the display to block and made an animation
+// This fix void the use of a javascript setTimeout
 .appleios{
 	.layout-animation > :not(.current) {
-	    display: none;
+		left:100%;
 	}
 }
 
@@ -26,15 +30,6 @@
 		position: absolute;
 
 		-webkit-backface-visibility: hidden;
-	}
-	.layout-animation > :not(.current) {
-		visibility: hidden;
-		opacity:0;
-	}
-	.appleios{
-		.layout-animation > :not(.current) {
-		    display: none;
-		}
 	}
 
 }
