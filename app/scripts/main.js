@@ -23,19 +23,11 @@ function doNavigation(fromPage, toPage, animation) {
 	fromPage.addClass(animation + ' out');
 }
 
-var animationPageOne = $('#page1');
-var animationPageTwo = $('#page2');
-var animationPageOneButton = $('#page1-button');
-var animationPageTwoButton = $('#page2-button');
-var animationPageOneSelect = $('#page1-select');
-var animationPageTwoSelect = $('#page2-select');
-
-animationPageOneButton.on('click', function(){
-	doNavigation(animationPageOne, animationPageTwo, animationPageOneSelect.prop('value'));
-});
-
-animationPageTwoButton.on('click', function(){
-	doNavigation(animationPageTwo, animationPageOne, animationPageTwoSelect.prop('value'));
+var animationPages = $('.layout-animation > div');
+animationPages.on('click', '.animate', function(e){
+	var page = $(e.delegateTarget);
+	var targetedPage = $('#'+page.find('.page').prop('value'));
+	doNavigation(page, targetedPage, page.find('.animation').prop('value'));
 });
 
 ////////

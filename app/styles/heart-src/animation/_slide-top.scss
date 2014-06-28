@@ -1,0 +1,54 @@
+.slidetop.in, .slidetop.out{
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+
+.slidetop.in {
+    -webkit-animation-name: slideTopIn;
+    animation-name: slideTopIn;
+}
+
+.slidetop.out {
+    -webkit-animation-name: slideTopOut;
+    animation-name: slideTopOut;
+}
+
+@-webkit-keyframes slideTopIn {
+    0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+    } 
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+
+@-webkit-keyframes slideTopOut {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+    } 
+    100% {
+        -webkit-transform: translate3d(0, -100%, 0);
+    }
+}
+
+@keyframes slideTopIn {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    } 
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideTopOut {
+    0% {
+        transform: translate3d(0, 0, 0);
+    } 
+    100% {
+        transform: translate3d(0, -100%, 0);
+    }
+}
