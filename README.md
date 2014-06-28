@@ -1,4 +1,4 @@
-heart
+Heart.css
 =====
 
 [![Build Status](https://travis-ci.org/Freddy03h/heart.png?branch=master)](https://travis-ci.org/Freddy03h/heart)
