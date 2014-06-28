@@ -26,7 +26,7 @@ env:
         # User specific env variables
         - secure: "J4e01CejYKblc1j3D/DpWW04INtkzB/6So8cB/oi/UeP/gMk04JvfD3HEzIOFFaiMgc5v1MAgAQkVJxAdBVu3mNxhjOTFBXzJyJCpe6TVyQyTgueGykfMNHT/7vHy3wo04wz7LqXOQa7zHCdnoDVLaf+CHQUSws1IJyVEo9k0/k="
         - GH_OWNER: Freddy03h
-        - GH_PROJECT_NAME: heart
+        - GH_PROJECT_NAME: heart.css
         # This .travis.yml file instructs travis-ci.org to build your master branch using `yeoman build`
         # and deploy the output to your project's gh-pages branch.
 
