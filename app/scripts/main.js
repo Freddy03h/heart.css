@@ -5,6 +5,11 @@ $(function() {
 	FastClick.attach(document.body);
 });
 
+//Prevent iOS 7.1 bug on landscape with minimal-ui
+window.addEventListener("orientationchange", function(){
+	window.scrollTo(0,0);
+}, true);
+
 /////////
 
 function doNavigation(fromPage, toPage, animation) {
