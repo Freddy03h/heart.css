@@ -6,7 +6,7 @@ $(function() {
 });
 
 //Prevent iOS 7.1 bug on landscape with minimal-ui
-window.addEventListener("orientationchange", function(){
+window.addEventListener('orientationchange', function(){
 	window.scrollTo(0,0);
 }, true);
 
