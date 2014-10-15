@@ -17,11 +17,8 @@ body{
 		bottom: 0;
 	}
 	.layer{
-		-webkit-perspective: 1000px;
 		perspective: 1000px;
-		-webkit-perspective-origin: 50% 50%;
 		perspective-origin: 50% 50%;
-		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
 	}
 }
