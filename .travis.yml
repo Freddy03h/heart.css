@@ -6,6 +6,8 @@ language:
     node_js
 node_js:
     - 0.10
+rvm:
+    - 2.1.2
 notifications:
     irc: "irc.freenode.org#generator-travis-ci"
 branches:
