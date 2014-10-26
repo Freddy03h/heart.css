@@ -36,7 +36,7 @@ gemfile:
 before_script:
     # install dependencies
     - gem update --system
-    - bundle install
+    - gem install compass
     - npm install -g grunt-cli bower
 script:
     # We want to gate on passing tests and a successful build
