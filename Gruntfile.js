@@ -269,14 +269,14 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'compass',
+                'compass:server',
                 'copy:styles'
             ],
             test: [
                 'copy:styles'
             ],
             dist: [
-                'compass',
+                'compass:dist',
                 'copy:styles',
                 'htmlmin'
             ]

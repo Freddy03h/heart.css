@@ -10,6 +10,6 @@
     "fastclick": "~1.0.2",
     "font-awesome": "~3.2.1",
     "highlightjs": "~8.0.0",
-    "compass-flex": "https://github.com/Freddy03h/compass-flex.git#~0.2.0"
+    "compass-flex": "https://github.com/Freddy03h/compass-flex.git#~0.2.1"
   }
 }

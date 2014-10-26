@@ -29,7 +29,8 @@ env:
         - GH_PROJECT_NAME: heart.css
         # This .travis.yml file instructs travis-ci.org to build your master branch using `yeoman build`
         # and deploy the output to your project's gh-pages branch.
-
+gemfile:
+    - Gemfile
 before_script:
     # install dependencies
     - gem update --system
